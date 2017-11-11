@@ -4,12 +4,18 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const {mongoose} = require('./db/mongoose');
+const fileUpload = require('express-fileupload');
 
+const {mongoose} = require('./db/mongoose');
 const index = require('./routes/index');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
+
+// Express only serves static assets in production
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,6 +28,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(fileUpload({
+  safeFileNames: true,
+  limits: {fileSize: 20000000}
+}));
 
 app.use('/', index);
 
@@ -43,12 +53,9 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
-}
 
 app.listen(PORT, () => {
-  console.log(`Backend is running on ${port}`);
+  console.log(`Backend is running on ${PORT}`);
 });
 
 module.exports = app;

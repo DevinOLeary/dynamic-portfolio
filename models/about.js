@@ -8,6 +8,9 @@ let AboutSchema = new mongoose.Schema({
   },
   period: {
     type: String
+  },
+  header: {
+    type: String
   }
 });
 
