@@ -15,11 +15,11 @@ const PORT = process.env.PORT || 3001;
 
 
 // Serve static assets
-app.use(express.static(path.resolve(__dirname, '..', 'build')));
+app.use(express.static('client/build'));
 
 // Always return the main index.html, so react-router render the route in the client
 app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
+  res.sendFile( 'client/build/index.html');
 });
 
 // uncomment after placing your favicon in /public
