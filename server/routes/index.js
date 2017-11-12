@@ -30,6 +30,7 @@ router.post('/about', (req,res) => {
 });
 
 router.get('/about', (req, res) => {
+  console.log('about request');
   About.find().then((info) => {
     res.send({info});
   }, (err) => {
