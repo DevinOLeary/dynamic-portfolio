@@ -14,11 +14,13 @@ const PORT = process.env.PORT || 3001;
 
 
 // Priority serve any static files.
-app.use(express.static(path.join(__dirname, './client/build')));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("../client/build"));
+}
 
 // All remaining requests return the React app, so it can handle routing.
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './client/build', 'index.html'));
+  res.sendFile('../client/build/index.html');
 });
 
 // uncomment after placing your favicon in /public
