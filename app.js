@@ -12,13 +12,10 @@ const index = require('./routes/index');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Express only serves static assets in production
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
 
-app.get('/', function(request, response){
-  res.sendfile('./client/build/index.html');
+app.use(express.static(path.resolve(__dirname, '..', 'build')));
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
 });
 
 // uncomment after placing your favicon in /public
