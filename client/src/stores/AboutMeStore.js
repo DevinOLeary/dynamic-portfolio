@@ -22,11 +22,11 @@ class AboutMeStore{
     }
 
 
-    // @computed get activeTimePeriod(){
-    //   return this.aboutInfo.filter((info) => (
-    //     info._id === this.timePeriodId
-    //   ));
-    // }
+    @computed get activeTimePeriod(){
+      return this.aboutInfo.filter((info) => (
+        info._id === this.timePeriodId
+      ));
+    }
 }
 
 
