@@ -13,14 +13,12 @@ const PORT = process.env.PORT || 3001;
 
 
 
-// Serve static assets
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
-}
+// Priority serve any static files.
+app.use(express.static(path.resolve(__dirname, './react-ui/build')));
 
-// Always return the main index.html, so react-router render the route in the client
-app.get('*', (req, res) => {
-  res.sendFile( 'client/build/index.html');
+// All remaining requests return the React app, so it can handle routing.
+app.get('*', function(request, response) {
+  response.sendFile(path.resolve(__dirname, './react-ui/build', 'index.html'));
 });
 
 // uncomment after placing your favicon in /public
