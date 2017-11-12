@@ -1,0 +1,72 @@
+@media screen and (min-width: 900px){
+    h1 {
+      font-size: 64px;
+      line-height: normal;
+    }
+    h2 {
+      font-size: 48px;
+    }
+    h3 {
+      font-size: 36px;
+    }
+    h4 {
+      font-size: 24px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 27px;
+    }
+    .headshot {
+      height: 400px;
+      width: 400px;
+    }
+    .img-skill {
+      height: 100px;
+    }
+    .img-project_preview {
+      width: 350px;
+    }
+    .button-secondary {
+      padding: 15px;
+      transition: .3s;
+    }
+    .active {
+      color: $text-active;
+    }
+  }
+
+
+@media screen and (max-width:899px) and (min-width: 600px){
+    //text rules
+    h1 {
+      line-height: normal;
+      font-size: 64px;
+    }
+    h4 {
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 27px;
+    }
+    .headshot {
+      height: 300px;
+      width: 300px;
+    }
+    .active {
+      color: $text-active;
+    }
+
+    .button-secondary:hover {
+      background-color: $background-secondary;
+      color: $text-inverse;
+    }
+    .vertical-dash {
+      font-size: 36px;
+    }
+    .divider-colored {
+      border-color: $background-primary;
+      background-color: $background-primary;
+    }
+}

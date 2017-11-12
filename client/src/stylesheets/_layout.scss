@@ -1,0 +1,176 @@
+//general layout
+.full-width {
+  width: 100%;
+}
+body, html {
+  overflow-x: hidden;
+}
+
+body {
+  height: 100%;
+  width:100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1,h2,h3,h4,h5 {
+  margin: 0;
+  padding: 0;
+}
+
+
+
+//containers and flex
+  .flex-container {
+    display: flex;
+    position: relative;
+    z-index: 100;
+  }
+  .center {
+    justify-content: center;
+    align-items: center;
+  }
+  .top-center {
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .column {
+    flex-direction: column;
+  }
+  .row {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .even-spacing {
+    justify-content: space-around;
+  }
+  .space-between{
+    justify-content: space-between;
+  }
+
+  .reverse-wrap {
+    flex-wrap: wrap-reverse;
+  }
+
+  .body-container {
+    min-height: 100vh;
+    height:100%;
+    position: relative;
+  }
+  .footer-container {
+    padding: 100px;
+  }
+  .text-center {
+    text-align: center;
+  }
+.project_list_img-container {
+  box-shadow: 0 0 3px;
+  border-radius: 100%;
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex: 0 0 200px;
+  position: relative;
+  margin: 20px;
+}
+.project_preview-description{
+  width: 25%;
+  min-width: 250px;
+  max-height: 350px;
+  overflow-y: scroll;
+}
+.slider-container {
+  height: 300px;
+}
+  .open_content-container {
+    width:80%;
+    margin: 15vh 0;
+  }
+.homepage-container {
+  height: 70vh;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+//elements
+
+
+//Nav
+.nav-bar {
+  justify-content: space-around;
+  margin: 2em 10%;
+}
+
+.nav-side{
+  position: fixed;
+  right:0px;
+  bottom:30vh;
+  transform: rotateZ(270deg);
+  height: 10px;
+  z-index: 1000;
+  aside{
+    width: 50vh;
+    position: absolute;
+    bottom: 1vw;
+    ul{
+      a{
+        padding: 3px 0;
+        text-align:center;
+        width: 100px;
+      }
+  }
+  }
+}
+
+
+.header-subpage {
+  height: 130px;
+}
+
+.mini-block{
+  min-height: 200px;
+}
+
+//text
+
+.text-project_caption {
+  width: 90%;
+  text-align: left;
+}
+
+.content-body_read {
+  width: 90%;
+  height: auto;
+  padding: 5%;
+  overflow:scroll;
+  max-width: 600px;
+  min-width: 300px;
+  max-height: 80vh;
+  background-color: $background-white;
+}
+.body-section {
+  margin-bottom: 50px;
+}
+.header-offset {
+  width: 30%;
+  margin-left: 10%;
+  margin-bottom: 20px;
+}
+.timeline-body {
+  width:70%;
+  margin: 0 15%;
+  min-width: 600px;
+}
+.timeline-header {
+  padding: 1em;
+}
+.project_cat-header {
+  margin: 5%;
+}
+.timeline-body:first-child{
+  margin-left:0px;
+}

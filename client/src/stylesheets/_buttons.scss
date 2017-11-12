@@ -1,0 +1,52 @@
+a:hover {
+  cursor: pointer;
+}
+.button-secondary {
+  padding: 10px;
+  background-color: $background-white;
+  border: 3px solid $background-secondary;
+  font-size: 18px;
+  color: $text-default;
+}
+button{
+  border: none;
+  color: inherit;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.button-long {
+  width: 60%;
+  max-width: 200px;
+}
+.button-action {
+  background-color: $button-primary;
+  color: $text-inverse;
+  transition: .3s;
+}
+.button-action:hover {
+  background-color: $button-primary-hover;
+  color: $text-inverse;
+}
+.button-exit {
+  color: $text-inverse;
+  display: inline-block;
+  margin:10%;
+}
+
+.left-button, .right-button {
+  position: absolute;
+  top: 30%;
+  font-size: 80px;
+  z-index: 200;
+}
+.left-button:hover, .right-button:hover{
+  cursor: pointer;
+}
+.left-button {
+  left: -50px;
+}
+.right-button {
+  right: -50px;
+}

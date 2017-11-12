@@ -1,0 +1,28 @@
+@import "~slick-carousel/slick/slick.css";
+@import "~slick-carousel/slick/slick-theme.css";
+@import 'vars';
+@import 'layout';
+@import 'style';
+@import 'buttons';
+@import 'animations';
+@import 'features';
+@import 'responsive';
+
+
+
+
+.configs {
+  li {
+    margin: 15px 0px;
+  }
+}
+
+code {
+  border-radius: 3px;
+  padding: 2px 10px;
+  font-size: 17px;
+  margin-right: 10px;
+  background-color: rgba(222, 222, 222, 0.34);
+  border: 1px solid #cccccc;
+  color: #868686;
+}
