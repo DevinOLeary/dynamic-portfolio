@@ -17,8 +17,9 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-// view engine setup
-app.set('views', path.join(__dirname, 'client/build'));
+app.get('/', function(request, response){
+  res.sendfile('./client/build/index.html');
+});
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
