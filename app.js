@@ -20,6 +20,8 @@ app.use(express.static(path.join(__dirname, 'react-ui/build')));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname+'/react-ui/build/index.html'));
 });
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
