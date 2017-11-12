@@ -7,7 +7,7 @@ import PhotoCategories from './presentational-components/PhotoCategories';
 import PhotoGallery from './PhotoGallery';
 
 // @inject('store')
-@observer
+// @observer
 class Photography extends React.Component{
 
   componentWillMount(){
