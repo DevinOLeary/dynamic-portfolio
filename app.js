@@ -7,7 +7,7 @@ const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
 
 const {mongoose} = require('./db/mongoose');
-const index = require('./routes/index');
+const index = require('./client/build/index');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -15,7 +15,9 @@ const PORT = process.env.PORT || 3001;
 
 
 // Serve static assets
-app.use(express.static('client/build'));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 // Always return the main index.html, so react-router render the route in the client
 app.get('*', (req, res) => {
@@ -28,7 +30,6 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 app.use(fileUpload({
   safeFileNames: true,
   limits: {fileSize: 20000000}
