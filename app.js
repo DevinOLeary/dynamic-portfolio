@@ -19,9 +19,9 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Always return the main index.html, so react-router render the route in the client
-app.get('*', (req, res) => {
-  res.sendFile( 'client/build/index.html');
-});
+// app.get('*', (req, res) => {
+//   res.sendFile( 'client/build/index.html');
+// });
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
