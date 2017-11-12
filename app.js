@@ -14,11 +14,11 @@ const PORT = process.env.PORT || 3001;
 
 
 // Priority serve any static files.
-app.use(express.static('react-ui/build'));
+app.use(express.static(path.join(__dirname, '../react-ui/build')));
 
 // All remaining requests return the React app, so it can handle routing.
 app.get('*', (req, res) => {
-  res.sendFile('react-ui/build', 'index.html');
+  res.sendFile(path.join(__dirname, '../react-ui/build', 'index.html'));
 });
 // app.engine('html', require('ejs').renderFile);
 // app.set('view engine', 'html');
