@@ -12,9 +12,9 @@ const {Photo} = require('../models/photos');
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Portfolio' });
-});
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Portfolio' });
+// });
 
 // routes for about info
 router.post('/about', (req,res) => {
