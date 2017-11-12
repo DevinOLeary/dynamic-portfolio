@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 
 
 // Serve static assets
-app.use(express.static('client/build'));
+app.use(express.static('client/buil'));
 
 // Always return the main index.html, so react-router render the route in the client
 app.get('*', (req, res) => {
