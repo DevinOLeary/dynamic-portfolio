@@ -7,7 +7,6 @@ const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
 
 const {mongoose} = require('./db/mongoose');
-const index = require('./client/build/index');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
@@ -35,7 +34,6 @@ app.use(fileUpload({
   limits: {fileSize: 20000000}
 }));
 
-app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
