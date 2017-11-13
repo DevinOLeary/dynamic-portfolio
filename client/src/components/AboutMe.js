@@ -21,7 +21,7 @@ class AboutMe extends React.Component {
 
   //set timePeriodId to the clicked id
   loadTime = (id) => {
-    this.props.store.aboutMeStore.loadNewTimePeriod(id);
+    this.props.store.aboutMeStore.loadNewTimePeriod(id.toString());
   }
   loadPic = (e) => {
     animations.fadeInDown(e.target);
@@ -29,16 +29,16 @@ class AboutMe extends React.Component {
 
   render() {
     const {aboutInfo, activeTimePeriod, loading, timePeriodId} = this.props.store.aboutMeStore;
-    const active = activeTimePeriod;
-    const props = {aboutInfo, active, loading, timePeriodId};
-    console.log(aboutInfo)
+
+    const props = {aboutInfo, activeTimePeriod, loading, timePeriodId};
     return(
       <div>
         <hgroup className="flex-container center column">
           <h2>a little about myself</h2>
         </hgroup>
         <br/>
-      {aboutInfo.length < 1 ? <LoadingPane/> :
+        {aboutInfo.length < 1 ? <LoadingPane/>
+        :
         <AboutContent {...props} loadTime={this.loadTime} loadPic={this.loadPic}/>
       }
       </div>

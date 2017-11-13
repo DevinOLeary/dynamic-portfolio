@@ -9,7 +9,7 @@ class ProjectStore {
 
   @action loadProjects(){
     this.picInfo = []
-    let dataUrl = '/projects';
+    let dataUrl = 'http://localhost:8888/wordpress/wp-json/wp/v2/projects?_embed';
     return axios.get(dataUrl)
     .then(res => {
       this.projectInfo = res.data

@@ -7,10 +7,10 @@ const coloredUnderline = {
 
 const TimelineHeader = (props) => {
   if(props.aboutInfo.length === 0){return null}
-  const timelineHeader = props.aboutInfo.map(head => (
+  const timelineHeader = props.aboutInfo.slice().reverse().map(head => (
     <li className="timeline-header hover-highlight" key={head._id} id={head._id}>
       <a onClick={props.loadTime.bind(this, head._id)}>
-        <h4 className={props.timePeriodId === head._id ? 'active' : ''}>{head.header}</h4>
+        <h4 className={props.aboutInfo=== head._id ? 'active' : ''}>{head.header}</h4>
       </a>
       <hr className="link-underline" style={coloredUnderline}/>
     </li>

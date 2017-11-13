@@ -4,10 +4,13 @@ import React from 'react';
 
 //components
 import TimelineHeader from './TimelineHeader';
+import LoadingPane from '../../small-components/LoadingPane';
 import TimelineContent from './TimelineContent';
 import HeadShot from './HeadShot';
 
 const AboutContent = (props) => {
+  console.log(props.activeTimePeriod);
+  if(props.loading === true){return <LoadingPane/>}else{
     return (
       <main className="body-container">
         <div className="triangle"></div>
@@ -17,7 +20,8 @@ const AboutContent = (props) => {
               <TimelineHeader {...props} loadTime={props.loadTime}/>
               <div className="flex-container center column">
 
-                  {props.active.length > 0 ? <TimelineContent active={props.active[0]}/>
+                  {props.activeTimePeriod.length > 0 ?
+                      <TimelineContent active={props.activeTimePeriod[0]}/>
                     :
                       <article className="content-body_read">
                         <h2 className="text-center">#lifegoals</h2>
@@ -69,5 +73,6 @@ const AboutContent = (props) => {
         </div>
       </main>
     );
+  }
 }
 export default AboutContent;

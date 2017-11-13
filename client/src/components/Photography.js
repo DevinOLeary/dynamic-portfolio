@@ -6,13 +6,20 @@ import {Route, Switch} from 'react-router-dom';
 import PhotoCategories from './presentational-components/PhotoCategories';
 import PhotoGallery from './PhotoGallery';
 
+
+
 @inject('store')
 @observer
 class Photography extends React.Component{
 
+
   componentWillMount(){
     this.props.store.photographyStore.loadImages();
   }
+
+
+
+
 
   render(){
     return(

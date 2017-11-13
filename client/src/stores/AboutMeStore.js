@@ -1,5 +1,4 @@
 import {observable, action, computed} from 'mobx';
-import axios from 'axios';
 
 class AboutMeStore{
   @observable timePeriodId = '';
@@ -8,23 +7,25 @@ class AboutMeStore{
 
   @action loadAbout(){
     this.loading = true;
-    let dataUrl = '/about';
-    return axios.get(dataUrl)
-    .then(res => {
-      this.aboutInfo = res.data.info
+    return fetch('/api/about')
+    .then(response => {
+      return response.json();
+    })
+    .then(results => {
+      this.aboutInfo = results.info;
       this.loading = false
     })
     .catch(error => console.log(error))
     }
 
     @action loadNewTimePeriod(id){
-      this.timePeriodId = id.toString();
+      this.timePeriodId = id;
     }
 
 
     @computed get activeTimePeriod(){
       return this.aboutInfo.filter((info) => (
-        info._id === this.timePeriodId
+        info._id === this.timePeriodId.toString()
       ));
     }
 }

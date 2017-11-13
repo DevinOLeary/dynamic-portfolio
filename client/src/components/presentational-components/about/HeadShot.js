@@ -6,9 +6,10 @@ const HeadShot = (props) =>  {
   //   info.acf.category ===  'headshot'
   // ));
   return(
-    <img src=""
-    alt="Headshot"
-    className="headshot" onLoad={props.loadPic.bind(this)}/>
+    <h2>Headshot</h2>
+    // <img src={headshot._embedded['wp:featuredmedia']["0"].source_url}
+    // alt={headshot.acf.category}
+    // className="headshot" onLoad={props.loadPic.bind(this)}/>
   );
 }
 

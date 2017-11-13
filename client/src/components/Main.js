@@ -5,7 +5,6 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group'
 
 
 
-
 //components
 import Photography from './Photography';
 import HomePage from './HomePage';
@@ -13,7 +12,6 @@ import DevAndDesign from './DevAndDesign';
 import AboutMe from './AboutMe';
 import Footer from './Footer';
 import Header from './Header';
-import CMS from './CMS';
 
 
 const Main = ({location}) => {
@@ -28,7 +26,6 @@ const Main = ({location}) => {
             <Route path="/photography" component={Photography}/>
             <Route path="/dev&design" component={DevAndDesign}/>
             <Route path="/about" component={AboutMe}/>
-            <Route path="/cms" component={CMS}/>
           </Switch>
         </CSSTransition>
       </TransitionGroup>

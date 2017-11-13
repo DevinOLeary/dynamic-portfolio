@@ -10,7 +10,7 @@ class PhotographyStore {
 
   @action loadImages(){
     this.loading = true;
-    let dataUrl = '/photos';
+    let dataUrl = 'http://localhost:8888/wordpress/wp-json/wp/v2/photos?_embed';
     return axios.get(dataUrl)
     .then((res)=>
       {this.picInfo = res.data
