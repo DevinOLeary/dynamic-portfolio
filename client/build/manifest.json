@@ -1,0 +1,15 @@
+{
+  "short_name": "Devin O'Leary",
+  "name": "Portfolio of Devin O'Leary",
+  "icons": [
+    {
+      "src": "tree_icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#DFAB1C",
+  "background_color": "#91BCC1"
+}
