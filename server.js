@@ -16,7 +16,7 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 //server client static files
-app.use(express.static(`../client/build`));
+app.use(express.static(`${__dirname}/client/build`));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));

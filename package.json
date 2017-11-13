@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "npm run server",
-    "server": "node server/server.js",
+    "server": "node server.js",
     "client": "node start-client.js",
     "dev": "echo \"This command has been deprecated. Use 'npm start'\" && exit 1",
     "lint": "eslint ."
