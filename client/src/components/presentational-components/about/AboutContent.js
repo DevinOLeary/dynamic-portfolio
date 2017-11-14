@@ -49,7 +49,7 @@ const AboutContent = (props) => {
           </section>
           <section className="body-section ">
             <hgroup className="header-offset flex-container column">
-              <h2 className="text-center">my passions</h2>
+              <h2 className="text-center mobile-inverse">my passions</h2>
               <hr className="divider-colored"/>
             </hgroup>
             <div className="flex-container center">
