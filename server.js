@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const _ = require('lodash');
 const {ObjectID} = require('mongodb');
 const bcrypt = require('bcryptjs');
+const multer = require('multer');
 
 const {mongoose} = require('./db/mongoose');
 const {About} = require('./models/about');
@@ -21,6 +22,7 @@ app.use(express.static(`${__dirname}/client/build`));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+const upload = multer({ dest: 'uploads/'})
 
 app.post('/api/about', (req,res) => {
   let about = new About({
