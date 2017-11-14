@@ -15,7 +15,7 @@ const AboutContent = (props) => {
       <main className="body-container">
         <div className="triangle"></div>
         <div>
-          <section className="flex-container row even-spacing reverse-wrap body-section ">
+          <section className="flex-container row even-spacing reverse-wrap body-section">
             <div className="flex-container center column ">
               <TimelineHeader {...props} loadTime={props.loadTime}/>
               <div className="flex-container center column">
@@ -65,7 +65,7 @@ const AboutContent = (props) => {
                   <h3>community:</h3>
                   <p className="content-body_read">I get super stoked about people doing cool things to bring
                   people together in their community. My life mission is to
-                  maximize my role in creating community, and using the web to extend the range infinately.</p>
+                  maximize my role in creating community, and using the web to extend the range infinitely</p>
                 </div>
               </article>
             </div>

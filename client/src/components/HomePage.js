@@ -10,10 +10,10 @@ import LoadingPane from './small-components/LoadingPane';
 
 
 function nameFadeIn(){
-  return TweenLite.fromTo("#titleName", 1.5, {opacity: 0, y: 0},{opacity: 1, y: 40, delay: 1.5});
+  return TweenLite.fromTo("#titleName", 1.5, {opacity: 0, y: 0},{opacity: 1, y: 30, delay: 1.5});
 };
 function quoteFadeIn(){
-  return TweenLite.fromTo("#titleQuote", 1.5, {opacity: 0, y: 0},{opacity: 1, y: 40, delay: 2});
+  return TweenLite.fromTo("#titleQuote", 1.5, {opacity: 0, y: 0},{opacity: 1, y: 35, delay: 2});
 };
 function firstBoxDrawAnimation(){
   let tl = new TimelineLite();
