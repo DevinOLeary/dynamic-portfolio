@@ -17,7 +17,7 @@ function quoteFadeIn(){
 };
 function firstBoxDrawAnimation(){
   let tl = new TimelineLite();
-  return tl.fromTo("#l1", 1, {height:0}, {height:238, ease:"Power1.easeIn", delay: .8})
+  return tl.fromTo("#l1", 1, {height:0}, {height:226, ease:"Power1.easeIn", delay: .8})
     .fromTo("#l3", 3, {width:0}, {width:'150%', ease: "Power1.easeOut"});
 };
 function secondBoxDrawAnimation(){
