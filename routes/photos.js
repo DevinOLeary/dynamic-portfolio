@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const _ = require('lodash');
+const fs = require('fs');
 const {ObjectID} = require('mongodb');
 const bcrypt = require('bcryptjs');
 const multer = require('multer');
@@ -10,26 +11,19 @@ const {mongoose} = require('../db/mongoose');
 const {Photo} = require('../models/photos');
 
 const storage = multer.diskStorage({
-  destination: './uploads/',
+  destination: '../uploads/',
   filename(req, file, cb) {
-    cb(null, `${new Date()}-${file.originalname}`);
+    cb(null, `${new Date()}-${file.fieldname}`);
   }
 });
 
-const upload = multer({storage});
+const upload = multer({storage: storage});
 
 router.post('/', upload.single('file'), (req, res) => {
 
-  let photo = new Photo({
-    image: req.file,
-    category: req.body.category,
-    location: req.body.location,
-    description: req.body.description
-  });
+  const photo = new Photo();
+  photo.image.data = fs.readFileSync(req.file.path);
 
-  if(!photo){
-    res.status(400).send('photo not found');
-  }
   photo.save().then((doc) => {
     res.send({doc});
   }).catch((err) => {

@@ -7,7 +7,7 @@ const _ = require('lodash');
 const {ObjectID} = require('mongodb');
 const bcrypt = require('bcryptjs');
 const aboutRoutes = require('./routes/about');
-const imageRoutes = require('./routes/images');
+const photoRoutes = require('./routes/photos');
 
 const {mongoose} = require('./db/mongoose');
 
@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 3001;
 //server client static files
 app.use(express.static(`${__dirname}/client/build`));
 app.use('/api/about', aboutRoutes);
-app.use('/api/images', imageRoutes);
+app.use('/api/photos', photoRoutes);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
