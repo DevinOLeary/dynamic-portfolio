@@ -16,6 +16,7 @@ class AboutMe extends React.Component {
 
   componentWillMount(){
     this.props.store.aboutMeStore.loadAbout();
+    this.props.store.aboutMeStore.loadHeadshot();
   }
 
 
@@ -28,9 +29,9 @@ class AboutMe extends React.Component {
   }
 
   render() {
-    const {aboutInfo, activeTimePeriod, loading, timePeriodId} = this.props.store.aboutMeStore;
-
-    const props = {aboutInfo, activeTimePeriod, loading, timePeriodId};
+    const {aboutInfo, activeTimePeriod, loading, timePeriodId, headshot} = this.props.store.aboutMeStore;
+    const props = {aboutInfo, activeTimePeriod, loading, timePeriodId, headshot};
+    console.log(aboutInfo);
     return(
       <div>
         <hgroup className="flex-container center column">

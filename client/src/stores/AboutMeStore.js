@@ -4,6 +4,7 @@ class AboutMeStore{
   @observable timePeriodId = '';
   @observable aboutInfo = [];
   @observable loading = true;
+  @observable headshot = {}
 
   @action loadAbout(){
     this.loading = true;
@@ -17,6 +18,17 @@ class AboutMeStore{
     })
     .catch(error => console.log(error))
     }
+
+  @action loadHeadshot(){
+    return fetch('/api/photos/headshot')
+    .then(response => {
+      return response.json();
+    })
+    .then(result => {
+      this.headshot = result[0];
+    })
+    .catch(error => console.log(error))
+  }
 
     @action loadNewTimePeriod(id){
       this.timePeriodId = id;

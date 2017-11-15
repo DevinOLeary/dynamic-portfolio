@@ -9,7 +9,6 @@ import TimelineContent from './TimelineContent';
 import HeadShot from './HeadShot';
 
 const AboutContent = (props) => {
-  console.log(props.activeTimePeriod);
   if(props.loading === true){return <LoadingPane/>}else{
     return (
       <main className="body-container">
