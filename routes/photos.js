@@ -12,7 +12,7 @@ const {Photo} = require('../models/photos');
 
 
 
-const upload = multer({dest: 'uploads/'});
+const upload = multer({dest: 'uploads/', limits: {fileSize: 500000}});
 
 router.post('/', upload.single('file'), (req, res) => {
   const newImage = fs.readFileSync(req.file.path);
