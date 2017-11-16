@@ -10,14 +10,9 @@ const router = express.Router();
 const {mongoose} = require('../db/mongoose');
 const {Photo} = require('../models/photos');
 
-const storage = multer.diskStorage({
-  destination: '/uploads',
-  filename(req, file, cb) {
-    cb(null, `${new Date()}-${file.fieldname}`);
-  }
-});
 
-const upload = multer({storage: storage});
+
+const upload = multer({dest: 'uploads/'});
 
 router.post('/', upload.single('file'), (req, res) => {
   const newImage = fs.readFileSync(req.file.path);
