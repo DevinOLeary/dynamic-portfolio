@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const _ = require('lodash');
+const fs = require('fs');
 const {ObjectID} = require('mongodb');
 const bcrypt = require('bcryptjs');
 const router = express.Router();
@@ -8,9 +9,8 @@ const router = express.Router();
 const {mongoose} = require('../db/mongoose');
 const {About} = require('../models/about');
 
-
 router.post('/', (req,res) => {
-  let about = new About({
+  const about = new About({
     header: req.body.header,
     period: req.body.period,
     content: req.body.content

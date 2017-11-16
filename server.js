@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
 const _ = require('lodash');
 const {ObjectID} = require('mongodb');
 const bcrypt = require('bcryptjs');
@@ -11,17 +10,17 @@ const photoRoutes = require('./routes/photos');
 
 const {mongoose} = require('./db/mongoose');
 
-
+const bodyParser = require('body-parser');
 const app = express();
-const PORT = process.env.PORT || 3001;
+
 
 //server client static files
 app.use(express.static(`${__dirname}/client/build`));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(cookieParser());
 app.use('/api/about', aboutRoutes);
 app.use('/api/photos', photoRoutes);
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
 
 
 
@@ -49,7 +48,7 @@ app.use(function(err, req, res, next) {
 
 
 
-
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => {
   console.log(`Backend is running on ${PORT}`);
