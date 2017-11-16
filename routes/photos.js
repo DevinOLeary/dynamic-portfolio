@@ -11,7 +11,7 @@ const {mongoose} = require('../db/mongoose');
 const {Photo} = require('../models/photos');
 
 const storage = multer.diskStorage({
-  destination: '../uploads/',
+  destination: '/uploads',
   filename(req, file, cb) {
     cb(null, `${new Date()}-${file.fieldname}`);
   }
