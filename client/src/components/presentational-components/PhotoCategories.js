@@ -3,7 +3,7 @@ import {NavLink} from 'react-router-dom';
 import {observer, inject} from 'mobx-react';
 
 //components
-import PicCategory from './PicCategory';
+import PhotoCategorySingle from './PhotoCategorySingle';
 import LoadingPane from '../small-components/LoadingPane';
 import animations from '../small-components/animations';
 
@@ -19,10 +19,10 @@ class PhotoCategories extends React.Component {
     const {picInfo, loading} = this.props.store.photographyStore;
     if(loading === true){ return <LoadingPane/>}else {
       const action = picInfo.find(pic => {
-        return pic.acf.photo_category === 'action';
+        return pic.category === 'action';
       });
       const travel = picInfo.find(pic => {
-        return pic.acf.photo_category === 'travel';
+        return pic.category === 'travel';
       });
 
       // store specified category head image paths into variables
@@ -34,12 +34,12 @@ class PhotoCategories extends React.Component {
           <div className="flex-container row even-spacing">
             <div className="text-center header-pic_category">
               <NavLink to="/photography/category_action">
-                <PicCategory image={actionImage} title="Action" loaded={this.loaded}/>
+                <PhotoCategorySingle image={actionImage} title="Action" loaded={this.loaded}/>
               </NavLink>
             </div>
             <div className="text-center header-pic_category">
               <NavLink to="/photography/category_travel">
-                <PicCategory image={travelImage} title="Travel" loaded={this.loaded}/>
+                <PhotoCategorySingle image={travelImage} title="Travel" loaded={this.loaded}/>
               </NavLink>
             </div>
           </div>

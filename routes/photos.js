@@ -60,6 +60,9 @@ router.get('/:category', (req, res) => {
     } else if(docs.length > 1){
       let picArray = [];
       docs.forEach((doc) => {
+        let category = doc.category;
+        let location = doc.location;
+        let id = doc._id;
         s3Bucket.createBucket(() => {
           let params = {
             Bucket: BUCKET_NAME,
@@ -70,7 +73,7 @@ router.get('/:category', (req, res) => {
             if(err){
               return res.status(400).send(err);
             }
-            picArray.push({data});
+            picArray.push({data, category, location, id});
           });
         });
       });

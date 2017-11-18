@@ -23,6 +23,7 @@ function imagesLoaded(parentNode) {
 class PhotoGallery extends React.Component {
   constructor(props){
     super(props);
+    this.props.store.photographyStore.loadImages(this.props.title.toLowerCase());
     this.props.store.photographyStore.page = this.props.title.toLowerCase();
   }
 
@@ -53,8 +54,8 @@ class PhotoGallery extends React.Component {
         <li key={pic.id} >
           <img
           className="img-presented"
-          src={pic._embedded['wp:featuredmedia']["0"].source_url}
-          alt={pic.acf.photo_description}/>
+          src={pic.image}
+          alt={pic.location}/>
         </li>
       )));
       locationHeader = key;
