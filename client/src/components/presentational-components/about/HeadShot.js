@@ -5,8 +5,8 @@ const HeadShot = (props) =>  {
   return (
     <div>
       <h2>Headshot</h2>
-      <img src={"data:" + props.headshot.contentType + ";base64," + props.headshot.image.data}
-      alt={props.headshot.category}
+      <img src={props.headshot}
+      alt="Devin O\'Leary"
       className="headshot" onLoad={props.loadPic.bind(this)}/>
     </div>
   );
