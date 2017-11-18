@@ -49,7 +49,7 @@ router.get('/:category', (req, res) => {
         console.log(docs);
         console.log(docs.image);
         console.log({docs.image});
-        console.log(docs[image]);
+        console.log(docs['image']);
         let params = {
           Bucket: BUCKET_NAME,
           Key: docs.image
