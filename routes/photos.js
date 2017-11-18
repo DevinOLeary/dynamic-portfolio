@@ -11,11 +11,6 @@ const AWS = require('aws-sdk');
 const {mongoose} = require('../db/mongoose');
 const {Photo} = require('../models/photos');
 
-const AWSConfig = new AWS.Config({
-  accessKeyId: process.env.AWS_ACCESS_ID,
-  secretAccessKey: process.env.AWS_ACCESS_KEY,
-  region: "us-east-1"
-});
 
 const BUCKET_NAME = process.env.S3_BUCKET_NAME;
 
@@ -43,6 +38,9 @@ router.post('/', upload.single('file'), (req, res) => {
 router.get('/:category', (req, res) => {
   const category = req.params.category;
   let s3Bucket = new AWS.S3({
+    accessKeyId: process.env.AWS_ACCESS_ID,
+    secretAccessKey: process.env.AWS_ACCESS_KEY,
+    region: "us-east-1"
     Bucket: BUCKET_NAME
   });
   Photo.find({category}).then((docs) => {
