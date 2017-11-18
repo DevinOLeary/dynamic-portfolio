@@ -46,12 +46,12 @@ router.get('/:category', (req, res) => {
       return res.status(404).send('No Images Found');
     } else if(docs.length === 1){
       s3Bucket.createBucket(() => {
-        console.log(docs);
-        console.log(docs.image);
-        console.log(docs['image']);
+
+        console.log(docs[0].image);
+
         let params = {
           Bucket: BUCKET_NAME,
-          Key: docs.image
+          Key: docs[0].image
         }
         s3Bucket.getSignedUrl('getObject',params, (err, url) => {
           if(err){
