@@ -58,7 +58,7 @@ router.get('/:category', (req, res) => {
         });
       });
     } else if(docs.length > 1){
-      let picArray = [];
+      const picArray = [];
       docs.forEach((doc) => {
         let category = doc.category;
         let location = doc.location;
@@ -73,10 +73,13 @@ router.get('/:category', (req, res) => {
             if(err){
               return res.status(400).send(err);
             }
-            this.picArray.push({data, category, location, id});
+            console.log(data);
+            console.log(category);
+            picArray.push({data, category, location, id});
           });
         });
       });
+      console.log(picArray);
       res.send(picArray);
     };
   })
