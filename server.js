@@ -19,8 +19,8 @@ app.use(express.static(`${__dirname}/client/build`));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
-app.use('/api/about', aboutRoutes);
-app.use('/api/photos', photoRoutes);
+app.use('/about', aboutRoutes);
+app.use('/photos', photoRoutes);
 
 
 
