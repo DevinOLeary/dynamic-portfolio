@@ -40,7 +40,7 @@ router.get('/:category', (req, res) => {
   let s3Bucket = new AWS.S3({
     accessKeyId: process.env.AWS_ACCESS_ID,
     secretAccessKey: process.env.AWS_ACCESS_KEY,
-    region: "us-east-1"
+    region: "us-east-1",
     Bucket: BUCKET_NAME
   });
   Photo.find({category}).then((docs) => {
