@@ -44,7 +44,7 @@ const AboutContent = (props) => {
 
               </div>
             </div>
-              {props.headshot.image &&
+              {props.headshot &&
                 <HeadShot {...props} loadPic={props.loadPic}/>
               }
           </section>
