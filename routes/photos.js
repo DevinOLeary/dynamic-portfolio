@@ -34,6 +34,8 @@ router.post('/', upload.single('file'), (req, res) => {
 
 });
 
+
+//GET method for retrieving photos
 router.get('/:category', (req, res) => {
   const category = req.params.category;
   let s3Bucket = new AWS.S3({
@@ -45,6 +47,7 @@ router.get('/:category', (req, res) => {
     if(!docs || docs.length === 0){
       return res.status(404).send('No Images Found');
     } else if(docs.length === 1){
+      //return single photo
       s3Bucket.createBucket(() => {
         let params = {
           Bucket: BUCKET_NAME,
@@ -58,25 +61,32 @@ router.get('/:category', (req, res) => {
         });
       });
     } else if(docs.length > 1){
+      //create an array of photo objects
       const picArray = [];
       docs.forEach((doc) => {
-        let category = doc.category;
-        let location = doc.location;
-        let id = doc._id;
+        //for each photo, get signed url and add to object with other items,
+        //then push object to picArray
+        let imageObject = {};
         s3Bucket.createBucket(() => {
           let params = {
             Bucket: BUCKET_NAME,
             Key: doc.image
           }
-
           s3Bucket.getSignedUrl('getObject',params, (err, data) => {
             if(err){
               return res.status(400).send(err);
             }
-            picArray.push({data});
+            imageObject = {
+              data,
+              category: doc.category,
+              location: doc.location,
+              id: doc._id
+            }
+            picArray.push(imageObject);
           });
         });
       });
+      //return picArray 
       console.log(picArray);
       res.send(picArray);
     };
