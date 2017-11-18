@@ -31,6 +31,7 @@ class AboutMe extends React.Component {
   render() {
     const {aboutInfo, activeTimePeriod, loading, timePeriodId, headshot} = this.props.store.aboutMeStore;
     const props = {aboutInfo, activeTimePeriod, loading, timePeriodId, headshot};
+    console.log(headshot);
     return(
       <div>
         <hgroup className="flex-container center column">

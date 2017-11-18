@@ -2,6 +2,7 @@ import React from 'react';
 
 
 const HeadShot = (props) =>  {
+  console.log(props.headshot);
   return (
     <div>
       <h2>Headshot</h2>

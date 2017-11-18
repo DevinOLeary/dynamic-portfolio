@@ -8,7 +8,7 @@ class AboutMeStore{
 
   @action loadAbout(){
     this.loading = true;
-    return fetch('/about')
+    return fetch('/api/about')
     .then(response => {
       return response.json();
     })
@@ -20,7 +20,7 @@ class AboutMeStore{
     }
 
   @action loadHeadshot(){
-    return fetch('/photos/headshot')
+    return fetch('/api/photos/headshot')
     .then(response => {
       return response.url;
     })
