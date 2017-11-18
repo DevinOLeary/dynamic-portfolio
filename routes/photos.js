@@ -53,7 +53,7 @@ router.get('/:category', (req, res) => {
         }
         s3Bucket.getSignedUrl('getObject',params, (err, url) => {
           if(err){
-            return res.status(400).send('Couldn\'t retrieve single picture',err);
+            return res.status(400).send(err);
           }
           res.send(url);
         });
