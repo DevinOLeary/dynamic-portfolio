@@ -36,7 +36,6 @@ router.post('/', upload.single('file'), (req, res) => {
 
 router.get('/:category', (req, res) => {
   const category = req.params.category;
-  console.log(IAM_USER_ID);
   let s3Bucket = new AWS.S3({
     accessKeyId: IAM_USER_ID,
     secretAccessKey: IAM_USER_KEY,
@@ -47,6 +46,7 @@ router.get('/:category', (req, res) => {
       return res.status(404).send('No Images Found');
     } else if(docs.length === 1){
       s3Bucket.createBucket(() => {
+        console.log(docs.image);
         let params = {
           Bucket: BUCKET_NAME,
           Key: docs.image
