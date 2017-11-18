@@ -73,9 +73,7 @@ router.get('/:category', (req, res) => {
             if(err){
               return res.status(400).send(err);
             }
-            console.log(data);
-            console.log(category);
-            picArray.push({data, category, location, id});
+            picArray.push({data});
           });
         });
       });
