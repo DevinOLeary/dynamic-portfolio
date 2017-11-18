@@ -13,7 +13,7 @@ class AboutMeStore{
       return response.json();
     })
     .then(results => {
-      this.aboutInfo = results.info;
+      this.aboutInfo = results.data;
       this.loading = false
     })
     .catch(error => console.log(error))
@@ -22,10 +22,9 @@ class AboutMeStore{
   @action loadHeadshot(){
     return fetch('/api/photos/headshot')
     .then(response => {
-      return response.url;
+      return response.data;
     })
     .then(result => {
-      console.log(result);
       this.headshot = result;
     })
     .catch(error => console.log(error))

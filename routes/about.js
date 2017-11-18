@@ -23,8 +23,8 @@ router.post('/', (req,res) => {
 });
 
 router.get('/', (req, res) => {
-  About.find().then((info) => {
-    res.send({info});
+  About.find().then((data) => {
+    res.send({data});
   }, (err) => {
     res.status(400).send();
   });

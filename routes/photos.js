@@ -50,11 +50,11 @@ router.get('/:category', (req, res) => {
           Bucket: BUCKET_NAME,
           Key: docs[0].image
         }
-        s3Bucket.getSignedUrl('getObject',params, (err, url) => {
+        s3Bucket.getSignedUrl('getObject',params, (err, data) => {
           if(err){
             return res.status(400).send(err);
           }
-          res.send(url);
+          res.send(data);
         });
       });
     } else if(docs.length > 1){
@@ -66,11 +66,11 @@ router.get('/:category', (req, res) => {
             Key: doc.image
           }
 
-          s3Bucket.getSignedUrl('getObject',params, (err, url) => {
+          s3Bucket.getSignedUrl('getObject',params, (err, data) => {
             if(err){
               return res.status(400).send(err);
             }
-            picArray.push(url);
+            picArray.push(data);
           });
         });
       });
