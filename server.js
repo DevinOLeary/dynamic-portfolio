@@ -16,14 +16,15 @@ const app = express();
 
 //server client static files
 app.use(express.static(`${__dirname}/client/build`));
+app.get('*', (req, res) => {
+  res.sendFile(`${__dirname}/client/build`);
+});
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use('/api/about', aboutRoutes);
 app.use('/api/photos', photoRoutes);
-app.get('*', (req, res) => {
-  res.sendFile(`${__dirname}/client/build`);
-});
+
 
 
 

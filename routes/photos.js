@@ -54,7 +54,7 @@ router.get('/:category', (req, res) => {
           if(err){
             return res.status(400).send(err);
           }
-          res.send(data);
+          res.send({data});
         });
       });
     } else if(docs.length > 1){
@@ -70,7 +70,7 @@ router.get('/:category', (req, res) => {
             if(err){
               return res.status(400).send(err);
             }
-            picArray.push(data);
+            picArray.push({data});
           });
         });
       });
