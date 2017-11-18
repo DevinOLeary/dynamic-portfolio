@@ -17,7 +17,6 @@ const AWSConfig = new AWS.Config({
   region: "us-east-1"
 });
 
-
 const BUCKET_NAME = process.env.S3_BUCKET_NAME;
 
 const upload = multer({dest: 'uploads/', limits: {fileSize: 500000}});
@@ -43,21 +42,25 @@ router.post('/', upload.single('file'), (req, res) => {
 //GET method for retrieving photos
 router.get('/:category', (req, res) => {
   const category = req.params.category;
-  let s3Bucket = new AWS.S3({Bucket: BUCKET_NAME});
+  let s3Bucket = new AWS.S3({
+    Bucket: BUCKET_NAME
+  });
   Photo.find({category}).then((docs) => {
     if(!docs || docs.length === 0){
       return res.status(404).send('No Images Found');
     } else if(docs.length === 1){
       //return single photo
-      let params = {
-        Bucket: BUCKET_NAME,
-        Key: docs[0].image
-      }
-      s3Bucket.getSignedUrl('getObject',params, (err, data) => {
-        if(err){
-          return res.status(400).send(err);
+      s3Bucket.createBucket(() => {
+        let params = {
+          Bucket: BUCKET_NAME,
+          Key: docs[0].image
         }
-        res.send({data});
+        s3Bucket.getSignedUrl('getObject',params, (err, data) => {
+          if(err){
+            return res.status(400).send(err);
+          }
+          res.send({data});
+        });
       });
     } else if(docs.length > 1){
       //create an array of photo objects
@@ -65,23 +68,25 @@ router.get('/:category', (req, res) => {
       docs.forEach((doc) => {
         //for each photo, get signed url and add to object with other items,
         //then push object to picArray
-        let imageObject = {};
-        let params = {
-          Bucket: BUCKET_NAME,
-          Key: doc.image
-        }
-        s3Bucket.getSignedUrl('getObject',params, (err, data) => {
-          if(err){
-            return res.status(400).send(err);
+        s3Bucket.createBucket(() => {
+          let imageObject = {};
+          let params = {
+            Bucket: BUCKET_NAME,
+            Key: doc.image
           }
-          imageObject = {
-            data,
-            category: doc.category,
-            location: doc.location,
-            id: doc._id
-          }
-          console.log(imageObject);
-          picArray.push(imageObject);
+          s3Bucket.getSignedUrl('getObject',params, (err, data) => {
+            if(err){
+              return res.status(400).send(err);
+            }
+            imageObject = {
+              data,
+              category: doc.category,
+              location: doc.location,
+              id: doc._id
+            }
+            picArray.push(imageObject);
+            console.log(imageObject);
+          });
         });
       });
       //return picArray
