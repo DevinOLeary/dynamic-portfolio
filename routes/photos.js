@@ -42,11 +42,12 @@ router.get('/:category', (req, res) => {
     Bucket: BUCKET_NAME
   });
   Photo.find({category}).then((docs) => {
+    console.log(`open ${docs}`);
     if(!docs || docs.length === 0){
       return res.status(404).send('No Images Found');
     } else if(docs.length === 1){
       s3Bucket.createBucket(() => {
-        console.log(docs.image);
+        console.log(`single image ${docs}`);
         let params = {
           Bucket: BUCKET_NAME,
           Key: docs.image
