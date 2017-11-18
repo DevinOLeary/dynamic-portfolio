@@ -36,7 +36,8 @@ router.post('/', upload.single('file'), (req, res) => {
 
 router.get('/:category', (req, res) => {
   const category = req.params.category;
-  const s3Bucket = new AWS.S3({
+  console.log(IAM_USER_ID);
+  let s3Bucket = new AWS.S3({
     accessKeyId: IAM_USER_ID,
     secretAccessKey: IAM_USER_KEY,
     Bucket: BUCKET_NAME
@@ -50,12 +51,11 @@ router.get('/:category', (req, res) => {
           Bucket: BUCKET_NAME,
           Key: docs.image
         }
-        s3Bucket.getSignedUrl('getObject',params, (err, data) => {
+        s3Bucket.getSignedUrl('getObject',params, (err, url) => {
           if(err){
-            return res.status(400).send(err);
+            return res.status(400).send('Couldn\'t retrieve single picture',err);
           }
-          console.log(data)
-          return res.send(data);
+          res.send(url);
         });
       });
     } else if(docs.length > 1){
@@ -67,15 +67,15 @@ router.get('/:category', (req, res) => {
             Key: doc.image
           }
 
-          s3Bucket.getSignedUrl('getObject',params, (err, data) => {
+          s3Bucket.getSignedUrl('getObject',params, (err, url) => {
             if(err){
               return res.status(400).send(err);
             }
-            picArray.push(data);
+            picArray.push(url);
           });
         });
       });
-      return res.send(picArray);
+      res.send(picArray);
     };
   })
   .catch((err) => {
