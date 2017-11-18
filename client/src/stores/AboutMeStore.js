@@ -22,6 +22,7 @@ class AboutMeStore{
   @action loadHeadshot(){
     return fetch('/api/photos/headshot')
     .then(response => {
+      console.log(response.data);
       return response.data;
     })
     .then(result => {

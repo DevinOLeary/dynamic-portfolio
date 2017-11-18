@@ -21,6 +21,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use('/api/about', aboutRoutes);
 app.use('/api/photos', photoRoutes);
+app.get('*', (req, res) => {
+  res.sendFile(`${__dirname}/client/build`);
+});
 
 
 
