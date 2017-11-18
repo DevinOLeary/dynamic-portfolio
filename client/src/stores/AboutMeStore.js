@@ -22,14 +22,10 @@ class AboutMeStore{
   @action loadHeadshot(){
     return fetch('/api/photos/headshot')
     .then(response => {
-      console.log(response.blob());
-      console.log(response);
-      
-      return response.blob();
+      return response.url;
     })
     .then(result => {
-      let objectURL = URL.createObjectURL(result);
-      this.headshot = objectURL;
+      this.headshot = result;
     })
     .catch(error => console.log(error))
   }
