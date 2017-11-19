@@ -7,12 +7,12 @@ class PhotographyStore {
 
   @action loadImages(category){
     this.loading = true;
-    return fetch(`/api/photos/travel`)
+
+    return fetch(`/api/photos/?${category}`)
     .then(response => {
       return response.json();
     })
     .then(results => {
-      console.log(results.picArray)
       this.picInfo = results.picArray;
       this.loading = false;
     })
