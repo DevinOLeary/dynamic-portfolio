@@ -80,7 +80,7 @@ router.get('/:category', (req, res) => {
             location: docs[i].location,
             id: docs[i]._id
           }
-          newArray.push(imageObject);
+          newArray.push({imageObject});
         });
         console.log(newArray);
         picArray.concat(newArray);
