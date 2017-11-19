@@ -1,5 +1,4 @@
 import {observable, action, computed} from 'mobx';
-import axios from 'axios';
 
 class PhotographyStore {
 
@@ -28,11 +27,9 @@ class PhotographyStore {
   }
 
   @computed get picSort(){
-    const page = this.page;
-    const newPics = this.picInfo.filter((pic) => (pic.category === page))
     const keyGetter = (pic) => (pic.location);
     const map = new Map();
-    newPics.forEach((item) => {
+    this.picInfo.forEach((item) => {
       const key = keyGetter(item);
       const collection = map.get(key);
       if(!collection){

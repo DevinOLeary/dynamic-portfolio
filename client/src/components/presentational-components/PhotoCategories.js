@@ -4,8 +4,9 @@ import {observer, inject} from 'mobx-react';
 
 //components
 import PhotoCategorySingle from './PhotoCategorySingle';
-import LoadingPane from '../small-components/LoadingPane';
 import animations from '../small-components/animations';
+import actionImage from '../../images/huntington-surfer-2.jpg';
+import travelImage from '../../images/iceland-road.jpg';
 
 @inject('store')
 @observer
@@ -15,37 +16,24 @@ class PhotoCategories extends React.Component {
     animations.fadeInDown(e.target);
   }
 
-  render(props){
-    const {picInfo, loading} = this.props.store.photographyStore;
-    if(loading === true){ return <LoadingPane/>}else {
-      const action = picInfo.find(pic => {
-        return pic.category === 'action';
-      });
-      const travel = picInfo.find(pic => {
-        return pic.category === 'travel';
-      });
-
-      // store specified category head image paths into variables
-      const actionImage = action._embedded['wp:featuredmedia']["0"].source_url;
-      const travelImage = travel._embedded['wp:featuredmedia']["0"].source_url;
-      return (
-        <section>
-          <div className="triangle-left"></div>
-          <div className="flex-container row even-spacing">
-            <div className="text-center header-pic_category">
-              <NavLink to="/photography/category_action">
-                <PhotoCategorySingle image={actionImage} title="Action" loaded={this.loaded}/>
-              </NavLink>
-            </div>
-            <div className="text-center header-pic_category">
-              <NavLink to="/photography/category_travel">
-                <PhotoCategorySingle image={travelImage} title="Travel" loaded={this.loaded}/>
-              </NavLink>
-            </div>
+  render(){
+    return (
+      <section>
+        <div className="triangle-left"></div>
+        <div className="flex-container row even-spacing">
+          <div className="text-center header-pic_category">
+            <NavLink to="/photography/category_action">
+              <PhotoCategorySingle image={actionImage} title="Action" loaded={this.loaded}/>
+            </NavLink>
           </div>
-        </section>
-      );
-    }
+          <div className="text-center header-pic_category">
+            <NavLink to="/photography/category_travel">
+              <PhotoCategorySingle image={travelImage} title="Travel" loaded={this.loaded}/>
+            </NavLink>
+          </div>
+        </div>
+      </section>
+    );
   }
 }
 

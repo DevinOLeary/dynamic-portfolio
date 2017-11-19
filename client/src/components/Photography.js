@@ -7,7 +7,6 @@ import PhotoGallery from './PhotoGallery';
 
 class Photography extends React.Component{
 
-
   render(){
     return(
       <div className="body-container">

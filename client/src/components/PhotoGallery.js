@@ -23,8 +23,11 @@ function imagesLoaded(parentNode) {
 class PhotoGallery extends React.Component {
   constructor(props){
     super(props);
-    this.props.store.photographyStore.loadImages(this.props.title.toLowerCase());
     this.props.store.photographyStore.page = this.props.title.toLowerCase();
+  }
+
+  componentWillMount(){
+    this.props.store.photographyStore.loadImages(this.props.title.toLowerCase());
   }
 
 
