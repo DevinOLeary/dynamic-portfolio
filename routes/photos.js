@@ -63,9 +63,7 @@ router.get('/:category', (req, res) => {
     } else if(docs.length > 1){
       //create an array of photo objects
       const picArray = [];
-      console.log('1')
       for (let i = 0; i < docs.length; i++){
-        console.log(2);
         let imageObject = {};
         let params = {
           Bucket: BUCKET_NAME,
@@ -75,18 +73,20 @@ router.get('/:category', (req, res) => {
           if(err){
             return res.status(400).send(err);
           }
+          return data;
+        }).then((data) => {
           imageObject = {
             data,
             category: docs[i].category,
             location: docs[i].location,
             id: docs[i]._id
           }
+          console.log(imageObject);
           picArray.push(imageObject);
         });
       }
       //return picArray
-      console.log(3)
-      console.log(picArray)
+      console.log(picArray);
       res.send(picArray);
     };
   })
