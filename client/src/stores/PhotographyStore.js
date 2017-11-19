@@ -3,11 +3,11 @@ import {observable, action, computed} from 'mobx';
 class PhotographyStore {
 
   @observable picInfo = []
-  @observable page = ""
   @observable loading = true
 
   @action loadImages(category){
     this.loading = true;
+    console.log(category);
     return fetch(`/api/photos/${category}`)
     .then(response => {
       return response.json();
@@ -29,7 +29,9 @@ class PhotographyStore {
   @computed get picSort(){
     const keyGetter = (pic) => (pic.location);
     const map = new Map();
-    this.picInfo.forEach((item) => {
+    let imageArray = this.picInfo;
+    console.log('within picSort' + imageArray);
+    imageArray.forEach((item) => {
       const key = keyGetter(item);
       const collection = map.get(key);
       if(!collection){
