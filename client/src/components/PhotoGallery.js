@@ -6,6 +6,7 @@ import {Element} from 'react-scroll';
 //components
 import SideMenu from './small-components/SideMenu';
 import animations from './small-components/animations';
+import LoadingPane from './small-components/LoadingPane';
 
 
 function imagesLoaded(parentNode) {
@@ -34,18 +35,10 @@ class PhotoGallery extends React.Component {
     animations.fadeInDown(e.target);
   }
 
-  getStyle(){
-    return {opacity: this.props.store.photographyStore.loading ? 0
-      :
-      setTimeout(() => {
-        return 1;
-      }, 300)
-    }
-  }
 
 
   render(props){
-      const {picSort, locationMap} = this.props.store.photographyStore;
+      const {picSort, locationMap, loading} = this.props.store.photographyStore;
 
 
     if(locationMap.size === 0){
@@ -77,15 +70,13 @@ class PhotoGallery extends React.Component {
           <hgroup className="flex-container center">
             <h1>{this.props.title}</h1>
           </hgroup>
-          <div style = {this.getStyle()}>
-
+          {loading ? <LoadingPane/> :
             <section className="flex-container center column">
               <ul ref="gallery" onLoad={this.handleImageLoad.bind(this)}>
                 {list}
               </ul>
             </section>
-
-          </div>
+          }
         </main>
         <div className="flex-container center mini-block">
           <NavLink to="/photography"><button className="button-secondary">Back To Categories</button></NavLink>
