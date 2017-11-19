@@ -82,13 +82,13 @@ router.get('/:category', (req, res) => {
             location: doc.location,
             id: doc._id
           }
-          return picArray.push(imageObject);
+          picArray.push(imageObject);
 
         });
       });
       //return picArray
       console.log(picArray);
-      res.send(picArray);
+      return res.send(picArray);
     };
   })
   .catch((err) => {
