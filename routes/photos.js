@@ -62,27 +62,29 @@ router.get('/:category', (req, res) => {
       });
     } else if(docs.length > 1){
       //create an array of photo objects
-      let picArray = [docs];
+      let picArray = [];
       for (let i = 0; i < docs.length; i++){
         let imageObject = {};
         let params = {
           Bucket: BUCKET_NAME,
           Key: docs[i].image
         }
-        s3Bucket.getSignedUrl('getObject',params, (err, data) => {
-          if(err){
-            return res.status(400).send(err);
-          } else {
-            return imageObject = {
-              data,
-              category: docs[i].category,
-              location: docs[i].location,
-              id: docs[i]._id
+        function newObject(){
+          s3Bucket.getSignedUrl('getObject',params, (err, data) => {
+            if(err){
+              return res.status(400).send(err);
+            } else {
+              return imageObject = {
+                data,
+                category: docs[i].category,
+                location: docs[i].location,
+                id: docs[i]._id
+              }
             }
-          }
-          picArray.push(imageObject);
-        });
-
+          });
+        }
+        newObject();
+        picArray.push(imageObject);
       }
       console.log(picArray);
       //return picArray
