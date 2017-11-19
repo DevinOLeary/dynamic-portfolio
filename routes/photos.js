@@ -69,17 +69,19 @@ router.get('/:category', (req, res) => {
           Bucket: BUCKET_NAME,
           Key: docs[i].image
         }
-        s3Bucket.getSignedUrl('getObject',params, (err, data) => {
-          if(err){
-            return res.status(400).send(err);
-          }
-          imageObject = {
-            data,
-            category: docs[i].category,
-            location: docs[i].location,
-            id: docs[i]._id
-          }
-        });
+        (function(){
+          s3Bucket.getSignedUrl('getObject',params, (err, data) => {
+            if(err){
+              return res.status(400).send(err);
+            }
+            imageObject = {
+              data,
+              category: docs[i].category,
+              location: docs[i].location,
+              id: docs[i]._id
+            }
+          });
+        }());
         picArray.push(imageObject);
       }
       console.log(picArray);
