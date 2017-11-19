@@ -8,7 +8,7 @@ class PhotographyStore {
   @action loadImages(category){
     this.loading = true;
 
-    return fetch(`/api/photos/?${category}`)
+    return fetch(`/api/photos/${category}`)
     .then(response => {
       return response.json();
     })
@@ -23,7 +23,6 @@ class PhotographyStore {
     const keyGetter = (pic) => (pic.location);
     const map = new Map();
     let imageArray = this.picInfo;
-    console.log(imageArray);
     imageArray.forEach((item) => {
       const key = keyGetter(item);
       const collection = map.get(key);
