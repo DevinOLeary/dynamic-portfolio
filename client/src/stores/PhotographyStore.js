@@ -7,9 +7,8 @@ class PhotographyStore {
 
   @action loadImages(category){
     this.loading = true;
-    return fetch(`/api/photos/${category}`)
+    return fetch(`/api/photos/travel`)
     .then(response => {
-      console.log(response);
       return response.json();
     })
     .then(results => {
