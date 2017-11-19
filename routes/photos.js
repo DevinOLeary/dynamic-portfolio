@@ -79,14 +79,12 @@ router.get('/:category', (req, res) => {
             location: docs[i].location,
             id: docs[i]._id
           }
-
-          picArray.push(imageObject);
         });
-        picArray.push(i);
+        picArray.push(imageObject);
       }
       console.log(picArray);
       //return picArray
-      return res.send(picArray);
+      res.send(picArray);
     };
   })
   .catch((err) => {
