@@ -59,7 +59,9 @@ class PhotoGallery extends React.Component {
           <img
           className="img-presented"
           src={pic.data}
-          alt={pic.location}/>
+          alt={pic.location}
+          style={imageStyle}
+          />
         </li>
       )));
       locationHeader = key;
@@ -74,7 +76,7 @@ class PhotoGallery extends React.Component {
           <hgroup className="flex-container center">
             <h1>{this.props.title}</h1>
           </hgroup>
-          <section className="flex-container center column" style={imageStyle}>
+          <section className="flex-container center column">
             <ul ref="gallery" onLoad={this.handleImageLoad.bind(this)}>
               {list}
             </ul>
