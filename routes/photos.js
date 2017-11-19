@@ -71,14 +71,14 @@ router.get('/:category', (req, res) => {
         }
         let url = s3Bucket.getSignedUrl('getObject', params);
         let imageObject = {
-          data: url
+          data: url,
           category: docs[i].category,
           location: docs[i].location,
           id: docs[i]._id
         };
         picArray.push(imageObject);
       }
-      
+
       console.log(picArray);
       //return picArray
       res.send(picArray);
