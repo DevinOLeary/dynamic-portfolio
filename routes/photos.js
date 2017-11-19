@@ -82,7 +82,7 @@ router.get('/:category', (req, res) => {
             location: doc.location,
             id: doc._id
           }
-          picArray.push(imageObject);
+          return picArray.push(imageObject);
 
         });
       });
