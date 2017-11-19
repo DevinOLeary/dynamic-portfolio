@@ -62,7 +62,7 @@ router.get('/:category', (req, res) => {
       });
     } else if(docs.length > 1){
       //create an array of photo objects
-      const picArray = [];
+      let picArray = [];
       for (let i = 0; i < docs.length; i++){
         let imageObject = {};
         let params = {
@@ -80,7 +80,7 @@ router.get('/:category', (req, res) => {
             id: docs[i]._id
           }
 
-          picArray.push('imageObject');
+          picArray.push(imageObject);
         });
         picArray.push(i);
       }
