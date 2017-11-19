@@ -83,12 +83,12 @@ router.get('/:category', (req, res) => {
             id: doc._id
           }
           picArray.push(imageObject);
-
         });
+        console.log(picArray);
       });
       //return picArray
       console.log(picArray);
-      return res.send(picArray);
+      res.send(picArray);
     };
   })
   .catch((err) => {
