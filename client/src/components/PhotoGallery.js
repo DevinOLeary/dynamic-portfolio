@@ -34,6 +34,14 @@ class PhotoGallery extends React.Component {
     animations.fadeInDown(e.target);
   }
 
+  getStyle(){
+    return {opacity: this.props.store.photographyStore.loading ? 0
+      :
+      setTimeout(() => {
+        return 1;
+      }, 300)
+    }
+  }
 
 
   render(props){
@@ -69,7 +77,7 @@ class PhotoGallery extends React.Component {
           <hgroup className="flex-container center">
             <h1>{this.props.title}</h1>
           </hgroup>
-
+          <div style = {this.getStyle()}>
 
             <section className="flex-container center column">
               <ul ref="gallery" onLoad={this.handleImageLoad.bind(this)}>
@@ -77,7 +85,7 @@ class PhotoGallery extends React.Component {
               </ul>
             </section>
 
-
+          </div>
         </main>
         <div className="flex-container center mini-block">
           <NavLink to="/photography"><button className="button-secondary">Back To Categories</button></NavLink>
