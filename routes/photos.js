@@ -63,24 +63,22 @@ router.get('/:category', (req, res) => {
     } else if(docs.length > 1){
       //create an array of photo objects
       let picArray = [];
+
       for (let i = 0; i < docs.length; i++){
         let params = {
           Bucket: BUCKET_NAME,
           Key: docs[i].image
         }
-        function newObject(){
-          s3Bucket.getSignedUrl('getObject',params, (err, data) => {
-            if(err){
-              return res.status(400).send(err);
-            }
-          imageObject: {
-              data
-            }
-          });
-        }
-        newObject();
-        picArray.push(newObject.imageObject);
+        let url = s3Bucket.getSignedUrl('getObject', params);
+        let imageObject = {
+          data: url
+          category: docs[i].category,
+          location: docs[i].location,
+          id: docs[i]._id
+        };
+        picArray.push(imageObject);
       }
+      
       console.log(picArray);
       //return picArray
       res.send(picArray);
