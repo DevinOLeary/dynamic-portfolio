@@ -78,8 +78,6 @@ router.get('/:category', (req, res) => {
         };
         picArray.push(imageObject);
       }
-
-      console.log(picArray);
       //return picArray
       res.send(picArray);
     };

@@ -57,7 +57,7 @@ class PhotoGallery extends React.Component {
         <li key={pic.id} >
           <img
           className="img-presented"
-          src={pic.image}
+          src={pic.data}
           alt={pic.location}/>
         </li>
       )));
