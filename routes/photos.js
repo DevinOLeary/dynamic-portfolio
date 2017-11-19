@@ -83,7 +83,7 @@ router.get('/:category', (req, res) => {
               id: doc._id
             }
             picArray.push(imageObject);
-            console.log(imageObject);
+            res.send(imageObject);
           });
         });
       });
