@@ -74,10 +74,7 @@ router.get('/:category', (req, res) => {
               return res.status(400).send(err);
             }
           imageObject: {
-              data,
-              category: docs[i].category,
-              location: docs[i].location,
-              id: docs[i]._id
+              data
             }
           });
         }
