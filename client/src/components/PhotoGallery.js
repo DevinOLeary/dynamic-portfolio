@@ -43,7 +43,7 @@ class PhotoGallery extends React.Component {
   render(props){
     const {picSort, locationMap, loading} = this.props.store.photographyStore;
     console.log(loading);
-    const imageStyle = {opacity: 0};
+    const imageStyle = {opacity: loading ? 0 : 1};
 
     if(locationMap.size === 0){
       return null;
@@ -77,7 +77,7 @@ class PhotoGallery extends React.Component {
             <h1>{this.props.title}</h1>
           </hgroup>
           <section className="flex-container center column">
-            <ul ref="gallery" onLoad={this.handleImageLoad.bind(this)}>
+            <ul ref="gallery" onLoad={this.handleImageLoad.bind(this)} style={imageStyle}>
               {list}
             </ul>
           </section>
