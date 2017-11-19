@@ -81,6 +81,7 @@ router.get('/:category', (req, res) => {
             }
           });
         }
+        newObject();
         picArray.push(newObject.imageObject);
       }
       console.log(picArray);
