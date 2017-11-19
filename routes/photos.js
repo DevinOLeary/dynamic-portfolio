@@ -73,8 +73,6 @@ router.get('/:category', (req, res) => {
           if(err){
             return res.status(400).send(err);
           }
-          return data;
-        }).then((data) => {
           imageObject = {
             data,
             category: docs[i].category,
@@ -86,7 +84,6 @@ router.get('/:category', (req, res) => {
         });
       }
       //return picArray
-      console.log(picArray);
       res.send(picArray);
     };
   })
