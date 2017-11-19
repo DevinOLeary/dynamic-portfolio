@@ -66,25 +66,24 @@ router.get('/:category', (req, res) => {
       docs.forEach((doc) => {
         //for each photo, get signed url and add to object with other items,
         //then push object to picArray
-        s3Bucket.createBucket(() => {
-          let imageObject = {};
-          let params = {
-            Bucket: BUCKET_NAME,
-            Key: doc.image
+
+        let imageObject = {};
+        let params = {
+          Bucket: BUCKET_NAME,
+          Key: doc.image
+        }
+        s3Bucket.getSignedUrl('getObject',params, (err, data) => {
+          if(err){
+            return res.status(400).send(err);
           }
-          s3Bucket.getSignedUrl('getObject',params, (err, data) => {
-            if(err){
-              return res.status(400).send(err);
-            }
-            imageObject = {
-              data,
-              category: doc.category,
-              location: doc.location,
-              id: doc._id
-            }
-            picArray.push(imageObject);
-            res.send(imageObject);
-          });
+          imageObject = {
+            data,
+            category: doc.category,
+            location: doc.location,
+            id: doc._id
+          }
+          picArray.push(imageObject);
+
         });
       });
       //return picArray
