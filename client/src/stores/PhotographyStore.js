@@ -6,15 +6,12 @@ class PhotographyStore {
   @observable loading = true
 
   @action loadImages(category){
-    this.loading = true;
-
     return fetch(`/api/photos/${category}`)
     .then(response => {
       return response.json();
     })
     .then(results => {
       this.picInfo = results.picArray;
-      this.loading = false;
     })
     .catch(error => console.log(error))
   }

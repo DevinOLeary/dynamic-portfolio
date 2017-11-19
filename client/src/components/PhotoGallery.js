@@ -38,8 +38,8 @@ class PhotoGallery extends React.Component {
 
 
   render(props){
-      const {picSort, locationMap, loading} = this.props.store.photographyStore;
-
+    const {picSort, locationMap, loading} = this.props.store.photographyStore;
+    console.log(loading);
 
     if(locationMap.size === 0){
       return null;
@@ -70,13 +70,11 @@ class PhotoGallery extends React.Component {
           <hgroup className="flex-container center">
             <h1>{this.props.title}</h1>
           </hgroup>
-          {loading ? <LoadingPane/> :
-            <section className="flex-container center column">
-              <ul ref="gallery" onLoad={this.handleImageLoad.bind(this)}>
-                {list}
-              </ul>
-            </section>
-          }
+          <section className="flex-container center column">
+            <ul ref="gallery" onLoad={this.handleImageLoad.bind(this)}>
+              {list}
+            </ul>
+          </section>
         </main>
         <div className="flex-container center mini-block">
           <NavLink to="/photography"><button className="button-secondary">Back To Categories</button></NavLink>
