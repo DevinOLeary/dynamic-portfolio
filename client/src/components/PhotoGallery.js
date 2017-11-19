@@ -21,8 +21,8 @@ function imagesLoaded(parentNode) {
 @inject('store')
 @observer
 class PhotoGallery extends React.Component {
-  constructor(props){
-    super(props);
+
+  componentWillMount(){
     this.props.store.photographyStore.loadImages(this.props.title.toLowerCase());
   }
 
@@ -40,7 +40,9 @@ class PhotoGallery extends React.Component {
 
 
   render(props){
-    const {picSort, locationMap} = this.props.store.photographyStore;
+      const {picSort, locationMap} = this.props.store.photographyStore;
+
+
     if(locationMap.size === 0){
       return null;
     }

@@ -7,20 +7,14 @@ class PhotographyStore {
 
   @action loadImages(category){
     this.loading = true;
-    console.log(category);
     return fetch(`/api/photos/${category}`)
     .then(response => {
+      console.log(response);
       return response.json();
     })
     .then(results => {
-      console.log(results.data)
-      console.log(results.category)
-      this.picInfo = {
-        image: results.data,
-        category: results.category,
-        location: results.location,
-        id: results.id
-      };
+      console.log(results.picArray)
+      this.picInfo = results.picArray;
       this.loading = false;
     })
     .catch(error => console.log(error))
@@ -30,7 +24,7 @@ class PhotographyStore {
     const keyGetter = (pic) => (pic.location);
     const map = new Map();
     let imageArray = this.picInfo;
-    console.log('within picSort' + imageArray);
+    console.log(imageArray);
     imageArray.forEach((item) => {
       const key = keyGetter(item);
       const collection = map.get(key);
