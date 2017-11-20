@@ -13,7 +13,7 @@ const {Project} = require('../models/projects');
 
 const BUCKET_NAME = process.env.S3_BUCKET_NAME;
 
-const upload = multer({dest: 'uploads/', limits: {fileSize: 500000}});
+const upload = multer({dest: 'uploads/'});
 
 router.post('/', upload.array('files'), (req,res) => {
   const project = new Project({
