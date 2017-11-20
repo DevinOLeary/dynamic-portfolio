@@ -16,8 +16,12 @@ const BUCKET_NAME = process.env.S3_BUCKET_NAME;
 const upload = multer({dest: 'uploads/'});
 
 router.post('/', upload.array('files'), (req,res) => {
+  let array = [];
+  req.files.forEach((file) => {
+    array.push(file.originalname);
+  });
   const project = new Project({
-    imageArray: req.files.originalname,
+    imageArray: array,
     category: req.body.category,
     description: req.body.description,
     title: req.body.title,
