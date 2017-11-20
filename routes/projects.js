@@ -26,7 +26,7 @@ router.post('/', upload.array('files'), (req,res) => {
   });
 
   project.save().then((doc) => {
-    res.send{(doc});
+    res.send({doc});
   }).catch((err) => {
     res.status(400).send(err);
   });
