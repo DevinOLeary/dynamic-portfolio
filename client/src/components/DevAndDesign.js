@@ -25,8 +25,10 @@ class DevAndDesign extends React.Component {
     this.props.store.projectStore.activeCategory = category
   }
 
-  isOpen = (id) => {
-    this.props.store.projectStore.activeProject = id.toString();
+  // have isOpen take the title instead of id and then fetch singleProjectInfo about
+  // titled project, then send info as props to the Project window
+  isOpen = (title) => {
+    this.props.store.projectStore.loadSingleProject(title);
   };
 
   closeProject = () => {
@@ -39,13 +41,8 @@ class DevAndDesign extends React.Component {
 
 
   render() {
-    const {projectInfo, activeProject, loading, filteredProjects, activeCategory} = this.props.store.projectStore;
-    let openProject = (projectInfo.length > 0 && activeProject.length > 0 &&
-      projectInfo.find(info => (
-        info.id.toString() === activeProject
-      ))
-    );
-    const props = {projectInfo, activeProject, loading, filteredProjects, activeCategory, openProject}
+    const {projectInfo, activeProject, loading, filteredProjects, activeCategory,singleProject} = this.props.store.projectStore;
+    const props = {projectInfo, activeProject, loading, filteredProjects, activeCategory, singleProject}
 
     return(
       <main className="body-container">

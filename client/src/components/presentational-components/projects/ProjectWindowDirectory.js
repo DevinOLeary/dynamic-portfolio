@@ -12,11 +12,11 @@ const ProjectWindowDirectory = (props) => {
     if(props.activeProject.length > 0){
     let projectContent= '';
     if(props.openProject.acf.category === "Design"){
-      projectContent = <DesignProject info={props.openProject}/>
+      projectContent = <DesignProject {...props}/>
     } else if(props.openProject.acf.category === "Development"){
-      projectContent = <WebProject info={props.openProject}/>
+      projectContent = <WebProject {...props}/>
     } else if(props.opProject.acf.category === "Animation"){
-      projectContent = <AnimationProject info={props.openProject}/>
+      projectContent = <AnimationProject {...props}/>
     } else{
       projectContent = '';
     }

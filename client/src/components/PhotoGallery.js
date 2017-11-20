@@ -33,7 +33,7 @@ class PhotoGallery extends React.Component {
     const galleryElement = this.refs.gallery;
     this.props.store.photographyStore.loading = !imagesLoaded(galleryElement);
     if(this.props.store.photographyStore.loading === false){
-      animations.fadeInDown(e.target);
+      setTimeout(()=>{animations.fadeInDown(e.target);},400);
     }
   }
 
@@ -42,7 +42,6 @@ class PhotoGallery extends React.Component {
 
   render(props){
     const {picSort, locationMap, loading} = this.props.store.photographyStore;
-    console.log(loading);
     const imageStyle = {opacity: loading ? 0 : 1};
 
     if(locationMap.size === 0){

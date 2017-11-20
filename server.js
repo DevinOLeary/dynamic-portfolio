@@ -7,6 +7,7 @@ const {ObjectID} = require('mongodb');
 const bcrypt = require('bcryptjs');
 const aboutRoutes = require('./routes/about');
 const photoRoutes = require('./routes/photos');
+const projectRoutes = require('./routes/projects');
 
 const {mongoose} = require('./db/mongoose');
 
@@ -22,6 +23,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(cookieParser());
 app.use('/api/about', aboutRoutes);
 app.use('/api/photos', photoRoutes);
+app.use('/api/projects', projectRoutes);
 app.get('*', (req, res) => {
   res.sendFile(`${__dirname}/client/build/index.html`);
 });

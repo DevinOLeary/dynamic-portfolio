@@ -12,6 +12,7 @@ function fadeInList(){
   return tl.staggerTo(list, 1.5,{opacity: 1, y: 20, delay: .5}, 0.2);
 }
 
+//populate filtered projects with the projectInfo titles and coverImages
 class ListItems extends React.Component {
 
   loaded(){

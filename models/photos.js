@@ -2,13 +2,15 @@ const mongoose = require('mongoose');
 
 let PhotosSchema = new mongoose.Schema({
   image: {
-    type: String
+    type: String,
+    required: true
   },
   contentType: {
     type: String
   },
   category: {
-    type: String
+    type: String,
+    required: true
   },
   location: {
     type: String

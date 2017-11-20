@@ -3,29 +3,42 @@ import axios from 'axios';
 
 class ProjectStore {
   @observable projectInfo = []
-  @observable activeProject = ''
   @observable loading = true
   @observable activeCategory = 'all'
+  @observable singleProject = {}
 
-  @action loadProjects(){
-    this.picInfo = []
-    let dataUrl = 'http://localhost:8888/wordpress/wp-json/wp/v2/projects?_embed';
-    return axios.get(dataUrl)
-    .then(res => {
-      this.projectInfo = res.data
-      this.loading = false
+  @action loadProjects(category){
+    return fetch(`/api/projects`)
+    .then((response )=> {
+      return response.json();
     })
-    .catch(error => console.log(error))
-    }
+    .then((results) => {
+      this.projectInfo = results.objArray;
+    })
+    .catch((error) => console.log(error))
+  }
+
+  @action loadSingleProject(title){
+    this.singleProject = {};
+    return fetch(`/api/projects/${title}`)
+    .then((response) => {
+      return response.json();
+    })
+    .then((result) => {
+      this.singleProject = result.projectObject;
+    })
+    .catch((error) => {console.log(error)});
+  }
 
   @computed get filteredProjects(){
     const active = this.activeCategory;
     return(
       active === 'all' ? this.projectInfo.filter(proj => (
-        proj.acf.category.toLowerCase() !== "skills"
-      )) :
+        proj.category.toLowerCase() !== "skills"
+      ))
+      :
       this.projectInfo.filter(proj => (
-        proj.acf.category.toLowerCase() === this.activeCategory
+        proj.category.toLowerCase() === this.activeCategory
       ))
     )
   }

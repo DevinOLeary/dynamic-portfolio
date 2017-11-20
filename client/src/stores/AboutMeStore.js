@@ -25,7 +25,6 @@ class AboutMeStore{
       return response.json();
     })
     .then(results => {
-      console.log(results.data)
       this.headshot = results.data;
     })
     .catch(error => console.log(error))

@@ -41,6 +41,7 @@ button:hover {
   top: 30%;
   font-size: 80px;
   z-index: 200;
+  color: $button-primary;
 }
 .left-button:hover, .right-button:hover{
   cursor: pointer;
