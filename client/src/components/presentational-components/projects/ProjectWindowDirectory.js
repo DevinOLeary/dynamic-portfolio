@@ -8,10 +8,8 @@ import SingleProjectContent from './SingleProjectContent';
 
 
 const ProjectWindowDirectory = (props) => {
-  console.log(props.singleProject);
   let contentWindow = ''
   if(props.singleProject && typeof props.singleProject != 'undefined'){
-    console.log(props.singleProject.category);
     let projectContent= '';
     if(props.singleProject.category === "design"){
       projectContent = <DesignProject {...props}/>

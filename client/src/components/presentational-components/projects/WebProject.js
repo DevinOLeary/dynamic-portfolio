@@ -13,6 +13,8 @@ const WebProject = (props) => {
   return (
     <div>
       <h2 className="text-center">{project.title}</h2>
+      <hr className="divider-colored"/>
+      <br/>
       <section className="flex-container row center">
         <aside className="project_preview-container">
           <p>{project.description}</p>
