@@ -5,7 +5,7 @@ class ProjectStore {
   @observable projectInfo = []
   @observable loading = true
   @observable activeCategory = 'all'
-  @observable singleProject = []
+  @observable singleProject = {}
 
   @action loadProjects(category){
     return fetch(`/api/projects`)
