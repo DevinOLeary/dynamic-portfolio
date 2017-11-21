@@ -1,5 +1,7 @@
 import React from 'react';
 import {inject, observer} from 'mobx-react';
+import {TimelineLite} from 'gsap';
+import GSAP from 'react-gsap-enhancer';
 
 //components
 import ProjectPageContent from './presentational-components/projects/ProjectPageContent';
@@ -7,7 +9,11 @@ import ContentFadeIn from './small-components/ContentFadeIn';
 import animations from './small-components/animations';
 
 
-
+function fadeInList(){
+  let list = ".skill-item";
+  let tl = new TimelineLite();
+  return tl.staggerTo(list, 1.5,{opacity: 1, y: 20, delay: .5}, 0.2);
+}
 
 @inject('store')
 @observer
@@ -20,6 +26,7 @@ class DevAndDesign extends React.Component {
 
   componentDidMount(){
     this.props.store.projectStore.activeProject = '';
+    this.addAnimation(fadeInList);
   }
 
   updateCategoryList = (category) => {
@@ -61,4 +68,4 @@ class DevAndDesign extends React.Component {
   }
 }
 
-export default DevAndDesign;
+export default GSAP()(DevAndDesign);
