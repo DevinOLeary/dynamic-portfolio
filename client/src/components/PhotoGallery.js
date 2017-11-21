@@ -31,7 +31,7 @@ class PhotoGallery extends React.Component {
   handleImageLoad(e){
     const galleryElement = this.refs.gallery;
     this.props.store.photographyStore.loading = !imagesLoaded(galleryElement);
-    setTimeout(()=>{animations.fadeInDown(e.target);},400);
+    animations.fadeInDown(e.target);
 
   }
 
