@@ -6,6 +6,7 @@ class ProjectStore {
   @observable loading = true
   @observable activeCategory = 'all'
   @observable singleProject = {}
+  @observable skillsArray = []
 
   @action loadProjects(category){
     return fetch(`/api/projects`)
@@ -29,6 +30,17 @@ class ProjectStore {
       this.singleProject = result.projectObject;
     })
     .catch((error) => {console.log(error)});
+  }
+
+  @action loadHeadshot(){
+    return fetch('/api/photos/skills')
+    .then(response => {
+      return response.json();
+    })
+    .then(results => {
+      this.skillsArray = results.picArray;
+    })
+    .catch(error => console.log(error))
   }
 
   @computed get filteredProjects(){

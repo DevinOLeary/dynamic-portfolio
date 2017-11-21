@@ -14,7 +14,8 @@ import animations from './small-components/animations';
 class DevAndDesign extends React.Component {
 
   componentWillMount(){
-    this.props.store.projectStore.loadProjects()
+    this.props.store.projectStore.loadProjects();
+    this.props.store.projectStore.loadHeadshot();
   }
 
   componentDidMount(){
@@ -41,8 +42,8 @@ class DevAndDesign extends React.Component {
 
 
   render() {
-    const {projectInfo, activeProject, loading, filteredProjects, activeCategory,singleProject} = this.props.store.projectStore;
-    const props = {projectInfo, activeProject, loading, filteredProjects, activeCategory, singleProject}
+    const {projectInfo, activeProject, loading, filteredProjects, activeCategory,singleProject, skillsArray} = this.props.store.projectStore;
+    const props = {projectInfo, activeProject, loading, filteredProjects, activeCategory, singleProject, skillsArray}
 
     return(
       <main className="body-container">
