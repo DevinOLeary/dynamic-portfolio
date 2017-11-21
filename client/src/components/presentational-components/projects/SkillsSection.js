@@ -1,7 +1,7 @@
 import React from 'react';
 
 const SkillsSection = (props) => {
-  let list = this.props.skillsArray.map((skill) => {
+  let list = props.skillsArray.map((skill) => {
     return <li key={skill.id}>
               <img src={skill.data} alt={skill.category} className="img-skill"/>
             </li>
