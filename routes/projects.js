@@ -70,12 +70,10 @@ router.get('/', (req, res) => {
 
 router.get('/:id', (req, res) => {
   const id = req.params.id;
-  console.log(id);
   Project.findById(id).then((docs) => {
     if(!docs){
       return res.status(404).send(err);
     }
-    console.log(docs);
     let s3Bucket = new AWS.S3({
       accessKeyId: process.env.AWS_ACCESS_ID,
       secretAccessKey: process.env.AWS_ACCESS_KEY,

@@ -14,6 +14,7 @@ class ProjectStore {
     })
     .then((results) => {
       this.projectInfo = results.objArray;
+      this.loading = false;
     })
     .catch((error) => console.log(error))
   }
@@ -25,6 +26,7 @@ class ProjectStore {
       return response.json();
     })
     .then((result) => {
+      console.log(result.projectObject);
       this.singleProject = result.projectObject;
     })
     .catch((error) => {console.log(error)});
