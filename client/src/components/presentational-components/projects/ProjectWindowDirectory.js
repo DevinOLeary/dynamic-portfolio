@@ -9,7 +9,7 @@ import SingleProjectContent from './SingleProjectContent';
 
 const ProjectWindowDirectory = (props) => {
   let contentWindow = ''
-  if(props.singleProject && typeof props.singleProject != 'undefined'){
+  if(props.singleProject && typeof props.singleProject !== 'undefined'){
     let projectContent= '';
     if(props.singleProject.category === "design"){
       projectContent = <DesignProject {...props}/>
@@ -24,7 +24,7 @@ const ProjectWindowDirectory = (props) => {
   }
   return (
     <div className="full-width">
-      {contentWindow != '' ?
+      {contentWindow !== '' ?
       <SingleProjectContent {...props} closeProject={props.closeProject}>
         {contentWindow}
       </SingleProjectContent>

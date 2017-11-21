@@ -6,7 +6,6 @@ import {Element} from 'react-scroll';
 //components
 import SideMenu from './small-components/SideMenu';
 import animations from './small-components/animations';
-import LoadingPane from './small-components/LoadingPane';
 
 
 function imagesLoaded(parentNode) {
@@ -32,9 +31,8 @@ class PhotoGallery extends React.Component {
   handleImageLoad(e){
     const galleryElement = this.refs.gallery;
     this.props.store.photographyStore.loading = !imagesLoaded(galleryElement);
-    if(this.props.store.photographyStore.loading === false){
-      setTimeout(()=>{animations.fadeInDown(e.target);},400);
-    }
+    setTimeout(()=>{animations.fadeInDown(e.target);},400);
+
   }
 
 

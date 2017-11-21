@@ -1,7 +1,6 @@
 import React from 'react';
 import {inject, observer} from 'mobx-react';
-import {TimelineLite} from 'gsap';
-import GSAP from 'react-gsap-enhancer';
+
 
 //components
 import ProjectPageContent from './presentational-components/projects/ProjectPageContent';
@@ -61,4 +60,4 @@ class DevAndDesign extends React.Component {
   }
 }
 
-export default GSAP()(DevAndDesign);
+export default DevAndDesign;
