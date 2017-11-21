@@ -6,7 +6,7 @@ import GSAP from 'react-gsap-enhancer';
 import LoadingPane from '../../small-components/LoadingPane';
 
 function fadeInList(){
-  let list = ".img-skill";
+  let list = ".skill-item";
   let tl = new TimelineLite();
   return tl.staggerTo(list, 1.5,{opacity: 1, y: 20, delay: .5}, 0.2);
 }
@@ -19,7 +19,7 @@ class DesignSkills extends React.Component {
 
   render(props){
     const skillsArray = this.props.skillsArray.map((skill) => {
-      return <li key={skill.id}>
+      return <li key={skill.id} className="skill-item">
                 <img src={skill.data} alt={skill.category} onLoad={this.loaded.bind(this)} className="img-skill"/>
               </li>
     });
