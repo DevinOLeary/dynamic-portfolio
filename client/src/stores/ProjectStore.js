@@ -5,7 +5,7 @@ class ProjectStore {
   @observable projectInfo = []
   @observable loading = true
   @observable activeCategory = 'all'
-  @observable singleProject = {}
+  @observable singleProject = []
 
   @action loadProjects(category){
     return fetch(`/api/projects`)
@@ -26,6 +26,8 @@ class ProjectStore {
       return response.json();
     })
     .then((result) => {
+      console.log(result);
+      console.log(result.projectObject);
       this.singleProject = result.projectObject;
     })
     .catch((error) => {console.log(error)});
