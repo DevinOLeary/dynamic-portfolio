@@ -9,13 +9,13 @@ import SingleProjectContent from './SingleProjectContent';
 
 const ProjectWindowDirectory = (props) => {
   let contentWindow = ''
-    if(props.activeProject.length > 0){
+    if(props.singleProject.length > 0){
     let projectContent= '';
-    if(props.openProject.acf.category === "Design"){
+    if(props.category === "Design"){
       projectContent = <DesignProject {...props}/>
-    } else if(props.openProject.acf.category === "Development"){
+    } else if(props.category === "Development"){
       projectContent = <WebProject {...props}/>
-    } else if(props.opProject.acf.category === "Animation"){
+    } else if(props.category === "Animation"){
       projectContent = <AnimationProject {...props}/>
     } else{
       projectContent = '';
