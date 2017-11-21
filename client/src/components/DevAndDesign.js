@@ -9,12 +9,6 @@ import ContentFadeIn from './small-components/ContentFadeIn';
 import animations from './small-components/animations';
 
 
-function fadeInList(){
-  let list = ".skill-item";
-  let tl = new TimelineLite();
-  return tl.staggerTo(list, 1.5,{opacity: 1, y: 20, delay: .5}, 0.2);
-}
-
 @inject('store')
 @observer
 class DevAndDesign extends React.Component {
@@ -26,7 +20,6 @@ class DevAndDesign extends React.Component {
 
   componentDidMount(){
     this.props.store.projectStore.activeProject = '';
-    this.addAnimation(fadeInList);
   }
 
   updateCategoryList = (category) => {
