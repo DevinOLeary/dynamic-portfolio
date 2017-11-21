@@ -29,9 +29,9 @@ class ListItems extends React.Component {
               <li onClick={this.props.isOpen.bind(this, work.id)} className="project-list-items">
                 <div className="project_list_img-container">
                   <div className="project_list_img-overlay">
-                    <h4 className="text-inverse">{work.acf.title}</h4>
+                    <h4 className="text-inverse">{work.title}</h4>
                   </div>
-                  <img src={work._embedded['wp:featuredmedia']["0"].source_url} alt={work.acf.title} onLoad={this.loaded.bind(this)}/>
+                  <img src={work.coverImage} alt={work.title} onLoad={this.loaded.bind(this)}/>
                 </div>
               </li>
             </Link>

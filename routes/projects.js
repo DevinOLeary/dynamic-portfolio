@@ -57,7 +57,8 @@ router.get('/', (req, res) => {
       let imageObject = {
         title: docs[i].title,
         category: docs[i].category,
-        coverImage: url
+        coverImage: url,
+        id: docs[i]._id
       };
       objArray.push(imageObject);
     }
@@ -67,9 +68,9 @@ router.get('/', (req, res) => {
   });
 });
 
-router.get('/:title', (req, res) => {
-  const title = req.params.title;
-  Project.find({title}).then((docs) => {
+router.get('/:id', (req, res) => {
+  const id = req.params.id;
+  Project.find({id}).then((docs) => {
     if(!docs){
       return res.status(404).send(err);
     }

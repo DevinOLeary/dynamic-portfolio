@@ -27,8 +27,8 @@ class DevAndDesign extends React.Component {
 
   // have isOpen take the title instead of id and then fetch singleProjectInfo about
   // titled project, then send info as props to the Project window
-  isOpen = (title) => {
-    this.props.store.projectStore.loadSingleProject(title);
+  isOpen = (id) => {
+    this.props.store.projectStore.loadSingleProject(id);
   };
 
   closeProject = () => {

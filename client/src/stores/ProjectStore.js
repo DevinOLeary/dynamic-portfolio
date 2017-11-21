@@ -18,9 +18,9 @@ class ProjectStore {
     .catch((error) => console.log(error))
   }
 
-  @action loadSingleProject(title){
+  @action loadSingleProject(id){
     this.singleProject = {};
-    return fetch(`/api/projects/${title}`)
+    return fetch(`/api/projects/${id}`)
     .then((response) => {
       return response.json();
     })

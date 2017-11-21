@@ -25,7 +25,6 @@ function secondBoxDrawAnimation(){
   return tl.fromTo("#l2", 4, {width:0}, {width:'150%', ease:"Power1.easeInOut" , delay: .8});
 };
 
-@GSAP()
 class HomePage extends React.Component {
   constructor(props){
     super(props);
@@ -75,4 +74,4 @@ class HomePage extends React.Component {
   }
 }
 
-export default HomePage;
+export default GSAP()(HomePage);
