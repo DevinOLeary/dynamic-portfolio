@@ -8,7 +8,7 @@ import SingleProjectContent from './SingleProjectContent';
 
 
 const ProjectWindowDirectory = (props) => {
-  console.log(props.singleProject);
+  console.log(props.singleProject.length);
   let contentWindow = ''
     if(props.singleProject.length > 0){
     let projectContent= '';

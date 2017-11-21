@@ -93,6 +93,7 @@ router.get('/:id', (req, res) => {
     const projectObject = {
       title: docs.title,
       description: docs.description,
+      category: docs.category,
       link: docs.link,
       imageArray: urlArray
     }

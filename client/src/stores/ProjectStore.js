@@ -26,8 +26,6 @@ class ProjectStore {
       return response.json();
     })
     .then((result) => {
-      console.log(result);
-      console.log(result.projectObject);
       this.singleProject = result.projectObject;
     })
     .catch((error) => {console.log(error)});
