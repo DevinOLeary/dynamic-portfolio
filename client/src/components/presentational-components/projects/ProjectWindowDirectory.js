@@ -11,12 +11,13 @@ const ProjectWindowDirectory = (props) => {
   console.log(props.singleProject);
   let contentWindow = ''
   if(props.singleProject && typeof props.singleProject != 'undefined'){
+    console.log(props.singleProject.category);
     let projectContent= '';
-    if(props.category === "design"){
+    if(props.singleProject.category === "design"){
       projectContent = <DesignProject {...props}/>
-    } else if(props.category === "development"){
+    } else if(props.singleProject.category === "development"){
       projectContent = <WebProject {...props}/>
-    } else if(props.category === "animation"){
+    } else if(props.singleProject.category === "animation"){
       projectContent = <AnimationProject {...props}/>
     } else{
       projectContent = '';
