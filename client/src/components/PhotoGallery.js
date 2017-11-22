@@ -6,6 +6,7 @@ import {Element} from 'react-scroll';
 //components
 import SideMenu from './small-components/SideMenu';
 import animations from './small-components/animations';
+import LoadingPane from './small-components/LoadingPane';
 
 
 function imagesLoaded(parentNode) {
@@ -75,7 +76,9 @@ class PhotoGallery extends React.Component {
           </hgroup>
           <section className="flex-container center column">
             <ul ref="gallery" onLoad={this.handleImageLoad.bind(this)} style={imageStyle}>
-              {list}
+              {loading === true ? <LoadingPane/> :
+                {list}
+              }  
             </ul>
           </section>
         </main>
