@@ -12,9 +12,7 @@ import ProjectWindowDirectory from './ProjectWindowDirectory';
 const ProjectListContainer = (props) => {
     return (props.loading === true ? <LoadingPane/> :
       <section className="flex-container center column">
-        <TransitionGroup>
-          <SkillsSection {...props}/>
-        </TransitionGroup>
+        <SkillsSection {...props}/>
         <Element name='projectPane'><div></div></Element>
         <ProjectWindowDirectory {...props} closeProject={props.closeProject}/>
         <ProjectList {...props} isOpen={props.isOpen} updateCategoryList={props.updateCategoryList}/>
