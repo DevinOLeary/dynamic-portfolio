@@ -1,6 +1,5 @@
 import React from 'react';
 import {Element} from 'react-scroll';
-import {TransitionGroup} from 'react-transition-group';
 
 //components
 import ProjectList from './ProjectList'
@@ -12,7 +11,7 @@ import animations from '../../small-components/animations';
 
 class ProjectListContainer extends React.Component{
   componentDidMount(){
-    let projectItems = this.list.querySelectorAll('.project-list-items');
+    const projectItems = this.list.querySelectorAll('.project-list-items');
     animations.fadeInList(projectItems);
   }
   render(props){
