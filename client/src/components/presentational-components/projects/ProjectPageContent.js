@@ -15,13 +15,14 @@ class ProjectListContainer extends React.Component{
     animations.fadeInList(projectItems);
   }
   render(props){
-    return (this.props.loading === true ? <LoadingPane/> :
+    return(
       <section className="flex-container center column">
         <SkillsSection {...props}/>
         <Element name='projectPane'><div></div></Element>
         <ProjectWindowDirectory {...props} closeProject={this.props.closeProject}/>
         <ProjectList {...props} isOpen={this.props.isOpen} updateCategoryList={this.props.updateCategoryList} ref={ref => this.list = ref}/>
-      </section>);
+      </section>
+    ) 
   }
 }
 
