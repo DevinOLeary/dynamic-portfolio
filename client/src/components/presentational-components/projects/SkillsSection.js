@@ -6,6 +6,7 @@ import animations from '../../small-components/animations';
 class SkillsSection extends React.Component{
   componentDidMount(){
     const skills = this.skills.querySelectorAll('.img-skills');
+    console.log(skills);
     animations.fadeInList(skills);
   }
   render(props){
