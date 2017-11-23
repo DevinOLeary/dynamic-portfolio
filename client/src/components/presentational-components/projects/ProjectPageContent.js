@@ -12,17 +12,18 @@ import animations from '../../small-components/animations';
 class ProjectListContainer extends React.Component{
   componentDidMount(){
     const projectItems = this.list.querySelectorAll('.project-list-items');
+    console.log(this.list)
     animations.fadeInList(projectItems);
   }
   render(props){
-    return(
+    console.log(this.list);
+    return (this.props.loading === true ? <LoadingPane/> :
       <section className="flex-container center column">
         <SkillsSection {...props}/>
         <Element name='projectPane'><div></div></Element>
         <ProjectWindowDirectory {...props} closeProject={this.props.closeProject}/>
         <ProjectList {...props} isOpen={this.props.isOpen} updateCategoryList={this.props.updateCategoryList} ref={ref => this.list = ref}/>
-      </section>
-    ) 
+      </section>);
   }
 }
 
