@@ -19,7 +19,7 @@ class ListItems extends React.Component {
                 <div className="project_list_img-overlay">
                   <h4 className="text-inverse">{work.title}</h4>
                 </div>
-                <img src={work.coverImage} alt={work.title} onLoad={this.loaded.bind(this)}/>
+                <img src={work.coverImage} alt={work.title} onLoad={this.props.onLoad.bind(this)}/>
               </div>
             </li>
           </Link>

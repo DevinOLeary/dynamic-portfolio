@@ -10,7 +10,7 @@ import animations from '../../small-components/animations';
 
 
 class ProjectListContainer extends React.Component{
-  componentDidMount(){
+  animation(){
     const projectItems = this.list.querySelectorAll('.project-list-items');
     console.log(this.list)
     animations.fadeInList(projectItems);
@@ -22,7 +22,7 @@ class ProjectListContainer extends React.Component{
         <SkillsSection {...props}/>
         <Element name='projectPane'><div></div></Element>
         <ProjectWindowDirectory {...props} closeProject={this.props.closeProject}/>
-        <ProjectList {...props} isOpen={this.props.isOpen} updateCategoryList={this.props.updateCategoryList} ref={ref => this.list = ref}/>
+        <ProjectList {...props} isOpen={this.props.isOpen} updateCategoryList={this.props.updateCategoryList} ref={ref => this.list = ref} onLoad={this.animation}/>
       </section>);
   }
 }
