@@ -7,16 +7,23 @@ import ProjectList from './ProjectList'
 import SkillsSection from './SkillsSection';
 import LoadingPane from '../../small-components/LoadingPane';
 import ProjectWindowDirectory from './ProjectWindowDirectory';
+import animations from '../../small-components/animations';
 
 
-const ProjectListContainer = (props) => {
-    return (props.loading === true ? <LoadingPane/> :
+class ProjectListContainer extends React.Component{
+  componentDidMount(){
+    let projectItems = this.list.querySelectorAll('.project-list-items');
+    animations.fadeInList(projectItems);
+  }
+  render(props){
+    return (this.props.loading === true ? <LoadingPane/> :
       <section className="flex-container center column">
         <SkillsSection {...props}/>
         <Element name='projectPane'><div></div></Element>
-        <ProjectWindowDirectory {...props} closeProject={props.closeProject}/>
-        <ProjectList {...props} isOpen={props.isOpen} updateCategoryList={props.updateCategoryList}/>
+        <ProjectWindowDirectory {...props} closeProject={this.props.closeProject}/>
+        <ProjectList {...props} isOpen={this.props.isOpen} updateCategoryList={this.props.updateCategoryList} ref={ref => this.list = ref}/>
       </section>);
+  }
 }
 
 export default ProjectListContainer;
