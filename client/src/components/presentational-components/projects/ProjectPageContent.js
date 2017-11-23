@@ -22,7 +22,7 @@ class ProjectListContainer extends React.Component{
         <SkillsSection {...props}/>
         <Element name='projectPane'><div></div></Element>
         <ProjectWindowDirectory {...props} closeProject={this.props.closeProject}/>
-        <ProjectList {...props} isOpen={this.props.isOpen} updateCategoryList={this.props.updateCategoryList} ref={ref => this.list = ref} onLoad={this.animation}/>
+        <ProjectList {...props} isOpen={this.props.isOpen} updateCategoryList={this.props.updateCategoryList} animationContainer={ref => this.list = ref} onLoad={this.animation}/>
       </section>);
   }
 }

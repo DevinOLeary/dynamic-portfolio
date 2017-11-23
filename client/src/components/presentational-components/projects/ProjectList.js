@@ -17,7 +17,7 @@ const ProjectList = (props) => {
           <li className="project_cat-header"><CategoryHeader title='all' {...props} onClick={props.updateCategoryList}/></li>
         </ul>
         <ul className='flex-container row center'>
-          <ListItems {...props}/>
+          <ListItems {...props} ref={props.animationContainer}/>
         </ul>
       </section>
     </div>
