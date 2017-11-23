@@ -4,14 +4,14 @@ import animations from '../../small-components/animations';
 
 
 class SkillsSection extends React.Component{
-  loadAnimation(){
+  componentDidMount(){
     const skills = this.skills.querySelectorAll('.img-skills');
     animations.fadeInList(skills);
   }
   render(props){
     let list = this.props.skillsArray.map((skill) => {
       return <li key={skill.id}>
-                <img src={skill.data} alt={skill.category} className="img-skill" onLoad={this.loadAnimation.bind(this)} />
+                <img src={skill.data} alt={skill.category} className="img-skill"/>
               </li>
     });
     return (
