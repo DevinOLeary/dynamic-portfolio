@@ -22,25 +22,28 @@ function imagesLoaded(parentNode) {
 @inject('store')
 @observer
 class PhotoGallery extends React.Component {
-  //are images loading?
+  constructor(props){
+    super(props);
+    this.state = {
+      loading: true
+    }
+  }
   componentWillMount(){
     this.props.store.photographyStore.loadImages(this.props.title.toLowerCase());
   }
 
   handleImageLoad(e){
     const galleryElement = this.refs.gallery;
-    this.props.store.photographyStore.loading = !imagesLoaded(galleryElement);
-    //is this animation broken?
+    this.setState({loading: !imagesLoaded(galleryElement)});
     animations.fadeInDown(e.target);
-
   }
 
 
 
 
   render(props){
-    const {picSort, locationMap, loading} = this.props.store.photographyStore;
-    const imageStyle = {opacity: loading ? 0 : 1};
+    const {picSort, locationMap} = this.props.store.photographyStore;
+    const imageStyle = {opacity: this.state.loading ? 0 : 1};
 
     if(locationMap.size === 0){
       return null;
@@ -74,8 +77,8 @@ class PhotoGallery extends React.Component {
             <h1>{this.props.title}</h1>
           </hgroup>
           <section className="flex-container center column">
-            <ul ref="gallery" onLoad={this.handleImageLoad.bind(this)} style={imageStyle}>
-              {loading === true ? <LoadingPane/> :
+            <ul ref="gallery" onLoad={this.handleImageLoad.bind(this)}>
+              {this.state.loading ? <LoadingPane/> :
                 {list}
               }
             </ul>

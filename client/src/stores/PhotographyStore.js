@@ -3,7 +3,6 @@ import {observable, action, computed} from 'mobx';
 class PhotographyStore {
 
   @observable picInfo = []
-  @observable loading = true
 
   @action loadImages(category){
     return fetch(`/api/photos/${category}`)
