@@ -33,8 +33,10 @@ class PhotoGallery extends React.Component {
   }
 
   handleImageLoad(e){
-    const galleryElement = this.refs.gallery;
-    this.setState({loading: !imagesLoaded(galleryElement)});
+    const galleryElement = this.gallery;
+    let loadingStatus = !imagesLoaded(galleryElement);
+    console.log(loadingStatus);
+    this.setState({loading: loadingStatus});
     animations.fadeInDown(e.target);
   }
 
@@ -43,6 +45,7 @@ class PhotoGallery extends React.Component {
 
   render(props){
     const {picSort, locationMap} = this.props.store.photographyStore;
+    console.log(picSort);
     const imageStyle = {opacity: this.state.loading ? 0 : 1};
 
     if(locationMap.size === 0){
@@ -77,7 +80,7 @@ class PhotoGallery extends React.Component {
             <h1>{this.props.title}</h1>
           </hgroup>
           <section className="flex-container center column">
-            <ul ref="gallery" onLoad={this.handleImageLoad.bind(this)}>
+            <ul ref={ref => this.gallery = ref} onLoad={this.handleImageLoad.bind(this)}>
               {this.state.loading ? <LoadingPane/> :
                 {list}
               }
