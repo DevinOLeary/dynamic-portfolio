@@ -81,9 +81,9 @@ class PhotoGallery extends React.Component {
           </hgroup>
           <section className="flex-container center column">
             <ul ref={ref => this.gallery = ref} onLoad={this.handleImageLoad.bind(this)}>
-              {this.state.loading ? <LoadingPane/> :
+
                 {list}
-              }
+              
             </ul>
           </section>
         </main>
