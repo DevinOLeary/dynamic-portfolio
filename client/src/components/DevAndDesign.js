@@ -14,7 +14,7 @@ class DevAndDesign extends React.Component {
 
   componentWillMount(){
     this.props.store.projectStore.loadProjects();
-    this.props.store.projectStore.loadHeadshot();
+    this.props.store.projectStore.loadSkillsArray();
   }
 
   componentDidMount(){
@@ -41,10 +41,9 @@ class DevAndDesign extends React.Component {
   render() {
     const {projectInfo, activeProject, loading, filteredProjects, activeCategory,singleProject, skillsArray} = this.props.store.projectStore;
     const props = {projectInfo, activeProject, loading, filteredProjects, activeCategory, singleProject, skillsArray}
-
+    console.log(skillsArray);
     return(
       <main className="body-container">
-
         <hgroup>
           <h2 className="text-center">my work</h2>
           <br/>

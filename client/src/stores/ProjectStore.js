@@ -31,13 +31,14 @@ class ProjectStore {
     .catch((error) => {console.log(error)});
   }
 
-  @action loadHeadshot(){
+  @action loadSkillsArray(){
     return fetch('/api/photos/skills')
     .then(response => {
       return response.json();
     })
     .then(results => {
       this.skillsArray = results.picArray;
+      console.log(this.skillsArray);
     })
     .catch(error => console.log(error))
   }
