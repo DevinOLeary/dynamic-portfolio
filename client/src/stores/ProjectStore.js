@@ -14,7 +14,6 @@ class ProjectStore {
     })
     .then((results) => {
       this.projectInfo = results.objArray;
-      this.loading = false;
     })
     .catch((error) => console.log(error))
   }
@@ -38,7 +37,7 @@ class ProjectStore {
     })
     .then(results => {
       this.skillsArray = results.picArray;
-      console.log(this.skillsArray);
+      this.loading = false;
     })
     .catch(error => console.log(error))
   }

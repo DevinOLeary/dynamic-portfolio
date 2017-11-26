@@ -41,16 +41,13 @@ class DevAndDesign extends React.Component {
   render() {
     const {projectInfo, activeProject, loading, filteredProjects, activeCategory,singleProject, skillsArray} = this.props.store.projectStore;
     const props = {projectInfo, activeProject, loading, filteredProjects, activeCategory, singleProject, skillsArray}
-    console.log(skillsArray);
     return(
       <main className="body-container">
         <hgroup>
           <h2 className="text-center">my work</h2>
           <br/>
         </hgroup>
-        <ContentFadeIn in={!loading}>
-          <ProjectPageContent {...props} closeProject={this.closeProject} isOpen={this.isOpen} updateCategoryList={this.updateCategoryList}/>
-        </ContentFadeIn>
+        <ProjectPageContent {...props} closeProject={this.closeProject} isOpen={this.isOpen} updateCategoryList={this.updateCategoryList}/>
       </main>
 
     );
