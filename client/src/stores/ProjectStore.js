@@ -38,7 +38,6 @@ class ProjectStore {
     .then(results => {
       this.skillsArray = results.picArray;
       this.loading = false;
-      console.log(this.skillsArray);
     })
     .catch(error => console.log(error))
   }
