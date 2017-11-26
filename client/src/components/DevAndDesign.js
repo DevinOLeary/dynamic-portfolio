@@ -25,8 +25,6 @@ class DevAndDesign extends React.Component {
     this.props.store.projectStore.activeCategory = category
   }
 
-  // have isOpen take the title instead of id and then fetch singleProjectInfo about
-  // titled project, then send info as props to the Project window
   isOpen = (id) => {
     this.props.store.projectStore.loadSingleProject(id);
   };

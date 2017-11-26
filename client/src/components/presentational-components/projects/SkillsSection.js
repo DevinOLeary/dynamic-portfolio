@@ -20,6 +20,8 @@ class SkillsSection extends React.Component{
             <p className="content-body_read">Technology is changing every day, and it really requires a passion that's borderline obsession to stay up to date on the most effective ways to build modern websites and applications. There's no telling what I'll be using next month, but here are a few of the tools I'm currently working with:</p>
           </div>
           <ul className="flex-container row center" ref={ref => this.skills = ref}>
+            //put mapped list in a small component that is referenced here, similar
+            //to the ListItems component
             {list}
           </ul>
         </article>

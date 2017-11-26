@@ -22,16 +22,15 @@ function imagesLoaded(parentNode) {
 @inject('store')
 @observer
 class PhotoGallery extends React.Component {
-
+  //are images loading?
   componentWillMount(){
     this.props.store.photographyStore.loadImages(this.props.title.toLowerCase());
   }
 
-
-
   handleImageLoad(e){
     const galleryElement = this.refs.gallery;
     this.props.store.photographyStore.loading = !imagesLoaded(galleryElement);
+    //is this animation broken?
     animations.fadeInDown(e.target);
 
   }
@@ -78,7 +77,7 @@ class PhotoGallery extends React.Component {
             <ul ref="gallery" onLoad={this.handleImageLoad.bind(this)} style={imageStyle}>
               {loading === true ? <LoadingPane/> :
                 {list}
-              }  
+              }
             </ul>
           </section>
         </main>

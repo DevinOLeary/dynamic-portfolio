@@ -16,8 +16,9 @@ const ProjectList = (props) => {
           <li className="project_cat-header"><CategoryHeader title='design' {...props} onClick={props.updateCategoryList}/></li>
           <li className="project_cat-header"><CategoryHeader title='all' {...props} onClick={props.updateCategoryList}/></li>
         </ul>
+        //will this ref work? Will it grab the classnames in the listitems component?
         <ul className='flex-container row center'>
-          <ListItems {...props} ref={props.animationContainer}/>
+          <ListItems {...props}/>
         </ul>
       </section>
     </div>

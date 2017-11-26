@@ -4,13 +4,10 @@ import {Link} from 'react-scroll';
 import LoadingPane from '../../small-components/LoadingPane';
 
 
-//populate filtered projects with the projectInfo titles and coverImages
 class ListItems extends React.Component {
   render(props){
     return(
-      //is page loaded?
       this.props.loading === true ? <LoadingPane/> :
-      // mapping of projects
       this.props.filteredProjects.map((work) => {
         return(
           <Link to="projectPane" smooth={true} key={work.id}>
