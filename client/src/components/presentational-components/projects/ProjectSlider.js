@@ -34,7 +34,7 @@ class ProjectSlider extends React.Component {
   }
   render(){
     return (
-      <section className="flex-container row center slider-container">
+      <section className="slider-container">
         <LeftButton onClick={this.changeSlide.bind(null,-1)}/>
           {this.props.children}
         <RightButton onClick={this.changeSlide.bind(null,1)}/>
