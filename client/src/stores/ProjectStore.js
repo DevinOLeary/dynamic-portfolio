@@ -6,6 +6,7 @@ class ProjectStore {
   @observable activeCategory = 'all'
   @observable singleProject = {}
   @observable skillsArray = []
+  @observable animations = []
 
   @action loadProjects(category){
     return fetch(`/api/projects`)
@@ -16,6 +17,17 @@ class ProjectStore {
       this.projectInfo = results.objArray;
     })
     .catch((error) => console.log(error))
+  }
+
+  @action loadAnimations(){
+    return fetch('/api/projects/animations')
+    .then((response) => {
+      return response.json();
+    })
+    .then((result) => {
+      this.animations = result.doc;
+    })
+    .catch((error) => console.log(error));
   }
 
   @action loadSingleProject(id){

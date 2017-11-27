@@ -10,6 +10,7 @@ const AWS = require('aws-sdk');
 
 const {mongoose} = require('../db/mongoose');
 const {Project} = require('../models/projects');
+const {Animation} = require('../models/animations');
 
 const BUCKET_NAME = process.env.S3_BUCKET_NAME;
 
@@ -30,6 +31,20 @@ router.post('/', upload.array('files'), (req,res) => {
   });
 
   project.save().then((doc) => {
+    res.send({doc});
+  }).catch((err) => {
+    res.status(400).send(err);
+  });
+});
+
+router.post('/animations', (req, res) => {
+  const animation = new Animation({
+    animationArray: req.body.animations
+  });
+  if(!animation){
+    res.status(404).send();
+  }
+  animation.save().then((doc) => {
     res.send({doc});
   }).catch((err) => {
     res.status(400).send(err);
@@ -100,6 +115,14 @@ router.get('/:id', (req, res) => {
     res.send({projectObject});
   }).catch((err) => {
     return res.status(404).send(err);
+  });
+});
+
+router.get('/animations', (req, res) => {
+  Animation.find().then((doc) => {
+    res.send({doc)};
+  }).catch((err) => {
+    res.status(404).send(err);
   });
 });
 
