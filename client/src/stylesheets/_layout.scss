@@ -100,9 +100,7 @@ h1,h2,h3,h4,h5 {
   bottom: 0;
   right: 0;
 }
-.timeline-body {
-  height: 600px;
-}
+
 .passions-body {
   height: 900px;
 }
@@ -174,14 +172,11 @@ h1,h2,h3,h4,h5 {
 .timeline-body {
   width:70%;
   margin: 0 15%;
-  min-width: 600px;
+  height: 600px;
 }
 .timeline-header {
   padding: 1em;
 }
 .project_cat-header {
   margin: 5%;
-}
-.timeline-body:first-child{
-  margin-left:0px;
 }
