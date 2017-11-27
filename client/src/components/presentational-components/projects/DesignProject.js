@@ -6,7 +6,7 @@ import ProjectSlider from './ProjectSlider';
 const DesignProject = (props) => {
   const project = props.singleProject;
   const imageList = project.imageArray.map((pic) => {
-    return <div className="flex-container center project_img-container" key={pic}>
+    return <div className="flex-container center" key={pic}>
             <img src={pic} className="img-project_preview" alt={project.title}/>
           </div>
         });
