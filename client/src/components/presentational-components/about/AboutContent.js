@@ -17,7 +17,7 @@ const AboutContent = (props) => {
           <section className="flex-container row even-spacing reverse-wrap body-section">
             <div className="flex-container center column ">
               <TimelineHeader {...props} loadTime={props.loadTime}/>
-              <div className="flex-container center column">
+              <div className="flex-container center column timeline-body">
 
                   {props.activeTimePeriod.length > 0 ?
                       <TimelineContent active={props.activeTimePeriod[0]}/>
@@ -54,7 +54,7 @@ const AboutContent = (props) => {
               <hr className="divider-colored"/>
             </hgroup>
             <div className="flex-container center">
-              <article className="flex-container column center display-box">
+              <article className="flex-container column center display-box passions-body">
                 <div className="inner-box flex-container center column">
                   <h3>biking:</h3>
                   <p className="content-body_read">Mountain, road, gravel, town, unicycle.
