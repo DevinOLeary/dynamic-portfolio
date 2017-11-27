@@ -54,7 +54,7 @@ const AboutContent = (props) => {
               <hr className="divider-colored"/>
             </hgroup>
             <div className="flex-container center">
-              <article className="flex-container column center display-box passions-body">
+              <article className="flex-container column center display-box">
                 <div className="inner-box flex-container center column">
                   <h3>biking:</h3>
                   <p className="content-body_read">Mountain, road, gravel, town, unicycle.
