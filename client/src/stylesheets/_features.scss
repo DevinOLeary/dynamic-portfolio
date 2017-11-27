@@ -88,6 +88,11 @@
   margin-bottom: 100px;
   margin-top: 50px;
 }
+.project_img-container{
+  box-shadow: 0px 2px 5px $background-grey;
+  height: 30vw;
+  overflow-y: scroll;
+}
 .mobile_menu-header {
   text-align: right;
   h3 {
@@ -236,9 +241,8 @@ position: relative;
 }
   .img-project_preview {
     height:auto;
-    width: 250px;
+    width: 100%;
     object-fit: cover;
-    box-shadow: 0px 3px 6px $background-grey;
   }
   .project_preview-slider {
     width: 70%;
