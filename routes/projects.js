@@ -120,7 +120,7 @@ router.get('/:id', (req, res) => {
 
 router.get('/animations', (req, res) => {
   Animation.find().then((doc) => {
-    res.send({doc)};
+    res.send({doc});
   }).catch((err) => {
     res.status(404).send(err);
   });
