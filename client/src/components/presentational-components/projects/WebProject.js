@@ -28,7 +28,7 @@ const WebProject = (props) => {
       </section>
       <br/>
       <footer className="flex-container center">
-        <a href={project.link} target="blank" rel="noopener noreferrer">View the site</a>
+        <a href={project.link} target="blank" rel="noopener noreferrer"><button className="button-secondary">View the site</button></a>
       </footer>
     </div>
   );

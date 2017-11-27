@@ -58,15 +58,15 @@ const AboutContent = (props) => {
                 <div className="inner-box flex-container center column">
                   <h3>biking:</h3>
                   <p className="content-body_read">Mountain, road, gravel, town, unicycle.
-                  Riding them and fixing them up</p>
+                  Riding them and fixing them up.</p>
                   <br/>
                   <h3>coffee shops:</h3>
                   <p className="content-body_read">Coffee is ok, but hanging out in cool coffee shops
-                  with good vibes is one of the top reasons I migrated to computer work</p>
+                  with good vibes is one of the top reasons I migrated to computer work.</p>
                   <h3>community:</h3>
                   <p className="content-body_read">I get super stoked about people doing cool things to bring
                   people together in their community. My life mission is to
-                  maximize my role in creating community, and using the web to extend the range infinitely</p>
+                  maximize my role in creating community, and using the web to extend the range infinitely.</p>
                 </div>
               </article>
             </div>
