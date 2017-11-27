@@ -39,7 +39,7 @@ router.post('/', upload.array('files'), (req,res) => {
 
 router.post('/animations', (req, res) => {
   const animation = new Animation({
-    animationArray: req.body.animations
+    animationArray: req.body
   });
   if(!animation){
     res.status(404).send();
