@@ -17,15 +17,16 @@ const WebProject = (props) => {
         <hr className="divider-colored"/>
       </hgroup>
       <section className="flex-container row center">
-        <aside className="project_preview-container">
+        <aside className="project_preview-description">
           <p>{project.description}</p>
         </aside>
-        <aside className="project_preview-container flex-container center">
+        <aside className="project_preview-slider flex-container center">
           <ProjectSlider>
             {imageList}
           </ProjectSlider>
         </aside>
       </section>
+      <br/>
       <footer className="flex-container center">
         <a href={project.link} target="blank" rel="noopener noreferrer">View the site</a>
       </footer>
