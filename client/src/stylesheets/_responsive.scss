@@ -39,6 +39,12 @@
     .slider-container {
       width: 90%;
     }
+    .left-button {
+      left: 0px;
+    }
+    .right-button {
+      right: 0px;
+    }
   }
 
 
@@ -73,6 +79,12 @@
     .button-secondary:hover {
       background-color: $background-secondary;
       color: $text-inverse;
+    }
+    .left-button {
+      left: 0px;
+    }
+    .right-button {
+      right: 0px;
     }
     .vertical-dash {
       font-size: 36px;
