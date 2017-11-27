@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
 let AnimationsSchema = new mongoose.Schema({
-  animationArray: []
+  animationArray: [{
+    html: String
+  }]
 });
 
 let Animation = mongoose.model('Animation', AnimationsSchema);
