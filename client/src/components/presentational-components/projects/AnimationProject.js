@@ -16,11 +16,11 @@ const AnimationProject = () => {
         <div className="animation-container flex-container center">
           <ProjectSlider>
             <div className="img-project_preview">
-              <iframe height='350' scrolling='no' title='Sunset' src='//codepen.io/djoleary07/embed/preview/gXbNpv/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style={iframeStyle}>See the Pen <a href='https://codepen.io/djoleary07/pen/gXbNpv/'>Sunset</a> by Devin OLeary (<a href='https://codepen.io/djoleary07'>@djoleary07</a>) on <a href='https://codepen.io'>CodePen</a>.
+              <iframe height='100%' scrolling='no' title='Sunset' src='//codepen.io/djoleary07/embed/preview/gXbNpv/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style={iframeStyle}>See the Pen <a href='https://codepen.io/djoleary07/pen/gXbNpv/'>Sunset</a> by Devin OLeary (<a href='https://codepen.io/djoleary07'>@djoleary07</a>) on <a href='https://codepen.io'>CodePen</a>.
               </iframe>
             </div>
             <div className="img-project_preview">
-              <iframe height='350' scrolling='no' title='Sunset' src='//codepen.io/djoleary07/embed/preview/gXbNpv/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style={iframeStyle}>See the Pen <a href='https://codepen.io/djoleary07/pen/gXbNpv/'>Sunset</a> by Devin OLeary (<a href='https://codepen.io/djoleary07'>@djoleary07</a>) on <a href='https://codepen.io'>CodePen</a>.
+              <iframe height='100%' scrolling='no' title='Sunset' src='//codepen.io/djoleary07/embed/preview/gXbNpv/?height=265&theme-id=0&default-tab=result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style={iframeStyle}>See the Pen <a href='https://codepen.io/djoleary07/pen/gXbNpv/'>Sunset</a> by Devin OLeary (<a href='https://codepen.io/djoleary07'>@djoleary07</a>) on <a href='https://codepen.io'>CodePen</a>.
               </iframe>
             </div>
           </ProjectSlider>
