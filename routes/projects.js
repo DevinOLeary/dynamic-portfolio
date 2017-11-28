@@ -37,20 +37,6 @@ router.post('/', upload.array('files'), (req,res) => {
   });
 });
 
-router.post('/animations', (req, res) => {
-  const animation = new Animation({
-    animationArray: req.body.animationArray
-  });
-
-  if(!animation){
-    res.status(404).send();
-  }
-  animation.save().then((doc) => {
-    res.send({doc});
-  }).catch((err) => {
-    res.status(400).send(err);
-  });
-});
 
 router.get('/', (req, res) => {
   Project.find().then((docs) => {
@@ -119,12 +105,5 @@ router.get('/:id', (req, res) => {
   });
 });
 
-router.get('/animations', (req, res) => {
-  Animation.find().then((doc) => {
-    res.send({doc});
-  }).catch((err) => {
-    res.status(404).send(err);
-  });
-});
 
 module.exports = router;

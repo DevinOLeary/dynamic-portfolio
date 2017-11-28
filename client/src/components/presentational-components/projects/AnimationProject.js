@@ -2,14 +2,7 @@ import React from 'react';
 
 import ProjectSlider from './ProjectSlider';
 
-const AnimationProject = (props) => {
-  const project = props.animations;
-  console.log(project);
-  const animationList = project.map((item) => {
-    return <div className="flex-container center" key={item}>
-              {item}
-          </div>
-        });
+const AnimationProject = () => {
   return (
     <div className="full-width">
       <hgroup className="project-title">
@@ -22,7 +15,10 @@ const AnimationProject = (props) => {
         </aside>
         <aside className="project_preview-slider flex-container center">
           <ProjectSlider>
-            {animationList}
+            <div>
+              <p data-height="265" data-theme-id="0" data-slug-hash="gXbNpv" data-default-tab="result" data-user="djoleary07" data-embed-version="2" data-pen-title="Sunset" class="codepen">See the Pen <a href="https://codepen.io/djoleary07/pen/gXbNpv/">Sunset</a> by Devin OLeary (<a href="https://codepen.io/djoleary07">@djoleary07</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+              <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+            </div>
           </ProjectSlider>
         </aside>
       </section>
