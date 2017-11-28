@@ -16,7 +16,7 @@ const AnimationProject = () => {
         <aside className="project_preview-slider flex-container center">
           <ProjectSlider>
             <div>
-              <p data-height="477" data-theme-id="0" data-slug-hash="gXbNpv" data-default-tab="result" data-user="djoleary07" data-embed-version="2" data-pen-title="Sunset" className="codepen">See the Pen <a href="https://codepen.io/djoleary07/pen/gXbNpv/">Sunset</a> by Devin OLeary <a href="https://codepen.io/djoleary07">@djoleary07</a> on <a href="https://codepen.io">CodePen</a>.</p>
+            <p data-height="477" data-theme-id="0" data-slug-hash="gXbNpv" data-default-tab="result" data-user="djoleary07" data-embed-version="2" data-pen-title="Sunset" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/djoleary07/pen/gXbNpv/">Sunset</a> by Devin OLeary (<a href="https://codepen.io/djoleary07">@djoleary07</a>) on <a href="https://codepen.io">CodePen</a>.</p>
             </div>
           </ProjectSlider>
         </aside>
