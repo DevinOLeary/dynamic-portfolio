@@ -7,7 +7,7 @@ const WebProject = (props) => {
   const project = props.singleProject;
   const imageList = project.imageArray.map((pic) => {
     return <div className="flex-container center" key={pic}>
-            <img src={pic} className="img-project_preview" alt={project.title}/>
+            <img src={pic} className="img-project_preview slide-item" alt={project.title}/>
           </div>
         });
   return (
