@@ -89,10 +89,13 @@ h1,h2,h3,h4,h5 {
   overflow-y: scroll;
   box-shadow: 0px 1px 5px $background-grey;
 }
-  .open_content-container {
-    width:80%;
-    margin: 15vh 0;
-  }
+.open_content-container {
+  width:80%;
+  margin: 15vh 0;
+}
+.animation-container {
+  width: 90%;
+}
 .homepage-container {
   height: 70vh;
   width: 100%;
