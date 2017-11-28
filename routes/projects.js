@@ -10,7 +10,6 @@ const AWS = require('aws-sdk');
 
 const {mongoose} = require('../db/mongoose');
 const {Project} = require('../models/projects');
-const {Animation} = require('../models/animations');
 
 const BUCKET_NAME = process.env.S3_BUCKET_NAME;
 
