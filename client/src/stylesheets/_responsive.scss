@@ -39,6 +39,9 @@
     .slider-container {
       width: 90%;
     }
+    .animation-container {
+      width: 100%;
+    }
     .left-button {
       left: 0px;
     }
@@ -92,5 +95,8 @@
     .divider-colored {
       border-color: $background-primary;
       background-color: $background-primary;
+    }
+    .animation-container {
+      width: 100%;
     }
 }
