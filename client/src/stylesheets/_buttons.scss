@@ -4,7 +4,6 @@ a:hover {
 button{
   border: none;
   color: inherit;
-  border-radius: 5%;
 }
 button:hover {
   cursor: pointer;
@@ -44,7 +43,7 @@ button:hover {
   margin:10%;
 }
 .button-flat {
-  color: $text-active;
+  color: $text-secondary;
 }
 
 .left-button, .right-button {

@@ -10,7 +10,7 @@ const TimelineHeader = (props) => {
   const timelineHeader = props.aboutInfo.map(head => (
     <li className="timeline-header hover-highlight" key={head._id} id={head._id}>
       <a onClick={props.loadTime.bind(this, head._id)}>
-        <h4 className='button-flat'>{head.header}</h4>
+        <h4 className={props.header === props.activeTimePeriod ? 'active' : 'button-flat'}>{head.header}</h4>
       </a>
       <hr className="link-underline" style={coloredUnderline}/>
     </li>
