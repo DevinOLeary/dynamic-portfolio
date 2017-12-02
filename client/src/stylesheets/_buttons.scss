@@ -1,13 +1,6 @@
 a:hover {
   cursor: pointer;
 }
-.button-secondary {
-  padding: 10px;
-  background-color: $background-white;
-  border: 3px solid $background-secondary;
-  font-size: 18px;
-  color: $text-default;
-}
 button{
   border: none;
   color: inherit;
@@ -15,6 +8,17 @@ button{
 }
 button:hover {
   cursor: pointer;
+}
+.button-primary {
+  padding: 10px;
+  background-color: $background-white;
+  border: 3px solid $button-primary;
+  font-size: 18px;
+  color: $text-default;
+}
+.button-primary:hover {
+  background-color: $button-primary;
+  color: $text-inverse;
 }
 
 .button-long {
@@ -34,6 +38,9 @@ button:hover {
   color: $text-inverse;
   display: inline-block;
   margin:10%;
+}
+.button-flat {
+  color: $text-active;
 }
 
 .left-button, .right-button {

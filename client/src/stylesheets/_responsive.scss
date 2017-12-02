@@ -23,7 +23,7 @@
     .img-skill {
       height: 100px;
     }
-    .button-secondary {
+    .button-primary {
       padding: 15px;
       transition: .3s;
     }
@@ -82,10 +82,7 @@
       width: 30%;
     }
 
-    .button-secondary:hover {
-      background-color: $background-secondary;
-      color: $text-inverse;
-    }
+    
     .left-button {
       left: 0px;
     }

@@ -83,12 +83,12 @@ class PhotoGallery extends React.Component {
             <ul ref={ref => this.gallery = ref} onLoad={this.handleImageLoad.bind(this)}>
 
                 {list}
-              
+
             </ul>
           </section>
         </main>
         <div className="flex-container center mini-block">
-          <NavLink to="/photography"><button className="button-secondary">Back To Categories</button></NavLink>
+          <NavLink to="/photography"><button className="button-primary">Back To Categories</button></NavLink>
         </div>
         <section className="nav-side">
           <SideMenu menu={menuMap} allPics={picSort}/>
