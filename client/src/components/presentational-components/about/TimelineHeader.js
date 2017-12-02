@@ -1,8 +1,8 @@
 import React from 'react';
 
 const coloredUnderline = {
-  backgroundColor: `#C8606F`,
-  borderColor: `#C8606F`
+  backgroundColor: `#872341`,
+  borderColor: `#872341`
 }
 
 const TimelineHeader = (props) => {
