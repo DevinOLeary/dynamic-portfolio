@@ -6,8 +6,9 @@ const coloredUnderline = {
 }
 const CategoryHeader = (props) => {
   return (
-    <hgroup className="hover-highlight flex-container center column" onClick={props.onClick.bind(this, props.title)}>
-      <h2 className={(props.title === props.activeCategory ? 'active' : 'button-flat')}>{props.title}</h2>
+    <hgroup className="hover-highlight flex-container center column" onClick={props.onClick.bind(this, props.title)}
+    className={(props.title === props.activeCategory ? 'active' : 'default')}>
+      <h2>{props.title}</h2>
       <hr className="link-underline" style={coloredUnderline}/>
     </hgroup>
   )

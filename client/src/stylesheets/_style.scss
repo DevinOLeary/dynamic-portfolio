@@ -76,7 +76,9 @@ button:focus {
     opacity: 1;
   }
 }
-
+.default {
+  color: $text-default;
+}
 
 .nav-side {
  a {
