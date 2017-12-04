@@ -50,5 +50,11 @@
 
 
 .loading-icon {
-  transform: rotateZ(360deg);
+  height: 150px;
+  width: auto;
+  animation: loading 1s infinite;
+}
+@keyframes loading{
+  from {transform: rotateZ(0deg);}
+  to {transform: rotateZ(360deg);}
 }
