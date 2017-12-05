@@ -6,6 +6,12 @@ const AnimationProject = () => {
   const iframeStyle = {
     width: '100%'
   }
+  const sandBoxStyle = {
+    width:'100%',
+    height:'500px',
+    border:0,
+    overflow:'hidden'
+  }
   return (
     <div className="full-width">
       <hgroup className="project-title">
@@ -20,7 +26,7 @@ const AnimationProject = () => {
               </iframe>
             </div>
             <div className="animation-project flex-container center">
-              <iframe src="https://codesandbox.io/embed/9z0j727vwp?view=preview" style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;" sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+              <iframe src="https://codesandbox.io/embed/9z0j727vwp?view=preview" style={sandBoxStyle} sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
             </div>
           </ProjectSlider>
         </div>
