@@ -57,8 +57,7 @@ const AboutContent = (props) => {
               <article className="flex-container column center display-box">
                 <div className="inner-box flex-container center column">
                   <h3>biking:</h3>
-                  <p className="content-body_read">Mountain, road, gravel, town, unicycle.
-                  I love riding them and fixing them up. Being able to ride my bikes in cool places and with cool people ties into pretty much all the things that I see as important in this world, namely nature preservation, community, and health, and tech is the powerful tool that can bring it all together</p>
+                  <p className="content-body_read">Mountain, road, gravel, town, unicycle. Being able to ride my bikes in cool places and with cool people ties into pretty much all the things that I see as important in this world, namely nature preservation, community, and health, and tech is the powerful tool that can bring it all together.</p>
                   <br/>
                   <h3>coffee shops:</h3>
                   <p className="content-body_read">Coffee is ok, but hanging out in cool coffee shops
