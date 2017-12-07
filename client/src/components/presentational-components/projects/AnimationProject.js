@@ -26,7 +26,7 @@ const AnimationProject = () => {
               </iframe>
             </div>
             <div className="animation-project_preview slide-item">
-              <iframe src="https://codesandbox.io/embed/9z0j727vwp?view=preview" style={sandBoxStyle} sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
+              <iframe src="https://codesandbox.io/embed/9z0j727vwp" style={sandBoxStyle} sandbox="allow-modals allow-forms allow-popups allow-scripts allow-same-origin"></iframe>
             </div>
           </ProjectSlider>
         </div>

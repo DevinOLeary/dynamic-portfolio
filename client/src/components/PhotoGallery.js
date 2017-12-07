@@ -35,7 +35,6 @@ class PhotoGallery extends React.Component {
   handleImageLoad(e){
     const galleryElement = this.gallery;
     let loadingStatus = !imagesLoaded(galleryElement);
-    console.log(loadingStatus);
     this.setState({loading: loadingStatus});
     animations.fadeInDown(e.target);
   }
@@ -45,7 +44,6 @@ class PhotoGallery extends React.Component {
 
   render(props){
     const {picSort, locationMap} = this.props.store.photographyStore;
-    console.log(picSort);
     const imageStyle = {opacity: this.state.loading ? 0 : 1};
 
     if(locationMap.size === 0){
