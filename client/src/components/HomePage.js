@@ -43,6 +43,9 @@ class HomePage extends React.Component {
 
   render() {
     let isLoading = this.state.loading;
+    const clearBackground = {
+      backgroundColor: 'none'
+    }
     const hidden = {
       opacity: 0
     }
@@ -64,8 +67,8 @@ class HomePage extends React.Component {
                 <span id="l1"></span>
                 <span id="l2"></span>
                 <span id="l3"></span>
-                <h1 id="titleName">Devin O&#8217;Leary</h1>
-                <h4 id="titleQuote">creating authentic solutions for the web</h4>
+                <h1 id="titleName" style={clearBackground}>Devin O&#8217;Leary</h1>
+                <h4 id="titleQuote" style={clearBackground}>creating authentic solutions for the web</h4>
               </div>
             </hgroup>
             <Nav />
