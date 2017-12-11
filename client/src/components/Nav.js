@@ -8,7 +8,7 @@ const whiteUnderline = {
 
 const Nav = () => {
     return(
-      <nav className="full-width">
+      <nav className="full-width forefront">
         <ul className="flex-container nav-bar row text-inverse">
           <li className="hover-highlight">
             <NavLink to="/photography">photography</NavLink>

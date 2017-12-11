@@ -20,7 +20,6 @@ const Main = ({location}) => {
     <div>
       {location.pathname !== "/" && <Header location={location}/>}
       <div className="body-container">
-        {location.pathname !== "/" && <div className="triangle"/>}
         <TransitionGroup>
           <CSSTransition key={currentKey} classNames="fade" timeout={1500}>
             <Switch location={location}>
