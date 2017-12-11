@@ -31,6 +31,9 @@ button:hover {
   transition: .3s;
   box-shadow: 1px 0px 4px $background-grey;
 }
+.button-action:first-child {
+  background-color: $background-transparent;
+}
 .button-action:hover {
   background-color: $button-primary-hover;
   color: $text-inverse;
@@ -42,6 +45,9 @@ button:hover {
   color: $text-inverse;
   display: inline-block;
   margin:10%;
+}
+.button-exit:first-child {
+  background-color: $background-transparent;
 }
 
 
