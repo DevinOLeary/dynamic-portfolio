@@ -44,7 +44,7 @@ class HomePage extends React.Component {
   render() {
     let isLoading = this.state.loading;
     const clearBackground = {
-      backgroundColor: 'none'
+      backgroundColor: 'rgba(240, 89, 65, 0)'
     }
     const hidden = {
       opacity: 0

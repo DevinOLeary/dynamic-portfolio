@@ -6,7 +6,7 @@ const whiteUnderline = {
   borderColor: `rgba(240, 89, 65, .1)`
 }
 const clearBackground = {
-  backgroundColor: 'none'
+  backgroundColor: 'rgba(240, 89, 65, 0)'
 }
 
 const Nav = () => {
