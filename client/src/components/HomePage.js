@@ -45,7 +45,7 @@ class HomePage extends React.Component {
   render() {
     let isLoading = this.state.loading;
     if(isLoading){return (
-      <div>
+      <div className="body-container">
         <LoadingPane/>
         <img src={bannerImage} alt="homepage" className="img-full_banner" style={this.state.img} onLoad={this.loaded.bind(this)}/>
       </div>
