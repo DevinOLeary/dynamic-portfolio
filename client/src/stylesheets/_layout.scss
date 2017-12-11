@@ -18,13 +18,14 @@ h1,h2,h3,h4,h5 {
   padding: 0;
 }
 
-
+main {
+  z-index: 10;
+}
 
 //containers and flex
   .flex-container {
     display: flex;
     position: relative;
-    z-index: 100;
   }
   .center {
     justify-content: center;
@@ -54,7 +55,6 @@ h1,h2,h3,h4,h5 {
 
   .body-container {
     min-height: 100vh;
-    height:100%;
     position: relative;
   }
   .footer-container {
@@ -121,7 +121,7 @@ h1,h2,h3,h4,h5 {
   bottom:30vh;
   transform: rotateZ(270deg);
   height: 10px;
-  z-index: 1000;
+  z-index: 100;
   aside{
     width: 50vh;
     position: absolute;
@@ -158,10 +158,8 @@ h1,h2,h3,h4,h5 {
   width: 90%;
   height: 100%;
   padding: 5%;
-  overflow:scroll;
   max-width: 600px;
   min-width: 300px;
-  max-height: 80vh;
   background-color: $background-white;
 }
 .body-section {
@@ -173,7 +171,6 @@ h1,h2,h3,h4,h5 {
 .timeline-body {
   width:100%;
   margin: 0 15%;
-  height: 600px;
 }
 .timeline-header {
   padding: 1em;

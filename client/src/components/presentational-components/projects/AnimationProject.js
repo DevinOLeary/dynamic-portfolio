@@ -8,7 +8,7 @@ const AnimationProject = () => {
   }
   const sandBoxStyle = {
     width:'100%',
-    height:'500px',
+    height:'30vw',
     border:0,
     overflow:'hidden'
   }

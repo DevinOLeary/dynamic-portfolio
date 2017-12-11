@@ -32,7 +32,7 @@ class AboutMe extends React.Component {
     const {aboutInfo, activeTimePeriod, loading, timePeriodId, headshot} = this.props.store.aboutMeStore;
     const props = {aboutInfo, activeTimePeriod, loading, timePeriodId, headshot};
     return(
-      <div>
+      <main>
         <hgroup className="flex-container center column">
           <h2>a little about myself</h2>
         </hgroup>
@@ -41,7 +41,7 @@ class AboutMe extends React.Component {
         :
         <AboutContent {...props} loadTime={this.loadTime} loadPic={this.loadPic}/>
       }
-      </div>
+      </main>
     );
   }
 

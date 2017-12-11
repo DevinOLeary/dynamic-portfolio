@@ -73,7 +73,7 @@ class PhotoGallery extends React.Component {
     });
     return(
       <div>
-        <main className="body-container">
+        <main>
           <hgroup className="flex-container center">
             <h1>{this.props.title}</h1>
           </hgroup>

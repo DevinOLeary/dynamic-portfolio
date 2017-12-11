@@ -9,13 +9,13 @@ class Photography extends React.Component{
 
   render(){
     return(
-      <div className="body-container">
+      <main>
         <Switch>
           <Route path="/photography" exact component={PhotoCategories}/>
           <Route path="/photography/category_action" exact render={(props) => <PhotoGallery title="action" />}/>
           <Route path="/photography/category_travel" exact render={(props) => <PhotoGallery title="travel" />}/>
         </Switch>
-      </div>
+      </main>
     );
   }
 }

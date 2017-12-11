@@ -19,7 +19,6 @@ class PhotoCategories extends React.Component {
   render(){
     return (
       <section>
-        <div className="triangle-left"></div>
         <div className="flex-container row even-spacing">
           <div className="text-center header-pic_category">
             <NavLink to="/photography/category_action">

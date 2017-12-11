@@ -19,16 +19,19 @@ const Main = ({location}) => {
   return (
     <div>
       {location.pathname !== "/" && <Header location={location}/>}
-      <TransitionGroup>
-        <CSSTransition key={currentKey} classNames="fade" timeout={1500}>
-          <Switch location={location}>
-            <Route path="/" exact component={HomePage}/>
-            <Route path="/photography" component={Photography}/>
-            <Route path="/dev&design" component={DevAndDesign}/>
-            <Route path="/about" component={AboutMe}/>
-          </Switch>
-        </CSSTransition>
-      </TransitionGroup>
+      <div className="body-container">
+        {location.pathname !== "/" && <div className="triangle"/>}
+        <TransitionGroup>
+          <CSSTransition key={currentKey} classNames="fade" timeout={1500}>
+            <Switch location={location}>
+              <Route path="/" exact component={HomePage}/>
+              <Route path="/photography" component={Photography}/>
+              <Route path="/dev&design" component={DevAndDesign}/>
+              <Route path="/about" component={AboutMe}/>
+            </Switch>
+          </CSSTransition>
+        </TransitionGroup>
+      </div>
       {location.pathname !== "/" && <Footer location={location}/>}
     </div>
   );

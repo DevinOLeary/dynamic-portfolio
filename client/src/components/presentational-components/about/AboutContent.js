@@ -11,8 +11,7 @@ import HeadShot from './HeadShot';
 const AboutContent = (props) => {
   if(props.loading === true){return <LoadingPane/>}else{
     return (
-      <main className="body-container">
-        <div className="triangle"></div>
+      <main>
         <div>
           <section className="flex-container row even-spacing reverse-wrap body-section">
             <div className="flex-container center column ">

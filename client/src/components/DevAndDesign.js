@@ -42,7 +42,7 @@ class DevAndDesign extends React.Component {
     const {projectInfo, activeProject, loading, filteredProjects, activeCategory,singleProject, skillsArray} = this.props.store.projectStore;
     const props = {projectInfo, activeProject, loading, filteredProjects, activeCategory, singleProject, skillsArray}
     return(
-      <main className="body-container">
+      <main>
         <hgroup>
           <h2 className="text-center">my work</h2>
           <br/>
