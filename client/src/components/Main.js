@@ -17,7 +17,7 @@ import backgroundImage from '../images/portfolio-background.jpg';
 
 const Main = ({location}) => {
   const backgroundStyle = {
-    backgroundImage: `${backgroundImage}`,
+    backgroundImage: `url(${backgroundImage})`,
     backgroundRepeat: 'repeat',
     backgroundSize: 'cover',
     zIndex: 0
