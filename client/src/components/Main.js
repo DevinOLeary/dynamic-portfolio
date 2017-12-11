@@ -25,7 +25,7 @@ const Main = ({location}) => {
   return (
     <div>
       {location.pathname !== "/" && <Header location={location}/>}
-      <div className="body-container" style={backgroundStyle}>
+      <div style={backgroundStyle}>
         <TransitionGroup>
           <CSSTransition key={currentKey} classNames="fade" timeout={1500}>
             <Switch location={location}>
