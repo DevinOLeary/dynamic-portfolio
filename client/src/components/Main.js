@@ -19,7 +19,6 @@ const Main = ({location}) => {
   const backgroundStyle = {
     backgroundImage: `url(${backgroundImage})`,
     backgroundRepeat: 'repeat',
-    backgroundSize: 'cover',
     zIndex: 0
   }
   const currentKey = location.pathname.split('/')[1] || '/'

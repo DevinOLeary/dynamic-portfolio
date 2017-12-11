@@ -30,12 +30,12 @@ class HomePage extends React.Component {
     super(props);
     this.state = {
       loading: true,
-      img: {opacity: 0}
+      img: {opacity: 1}
     }
   }
 
   loaded(){
-    this.setState({loading: false, img: {opacity: 1}});
+    this.setState({loading: false, img: {opacity: 0}});
     this.addAnimation(nameFadeIn);
     this.addAnimation(quoteFadeIn);
     this.addAnimation(firstBoxDrawAnimation);
