@@ -1,7 +1,7 @@
 import React from 'react';
 
 import animations from '../../small-components/animations';
-import Resume from '../../../images/Resume.jpg';
+
 
 
 class SkillsSection extends React.Component{
@@ -23,10 +23,6 @@ class SkillsSection extends React.Component{
           <ul className="flex-container row center" ref={ref => this.skills = ref}>
             {list}
           </ul>
-          <br/>
-          <div className="flex-container center">
-            <a href={Resume} target="_blank" className="button-primary">open resume</a>
-          </div>
         </article>
     );
   }
