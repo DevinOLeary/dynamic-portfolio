@@ -7,10 +7,12 @@ h1, h2, h3{
   font-family: $title-text;
   font-weight: 300;
   color: inherit;
+  background-color: $background-white;
 }
 h4, h5, p, a {
   font-family: $read-text;
   font-weight: 300;
+  background-color: $background-white;
 }
 h1 {
   font-size: 48px;
