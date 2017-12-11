@@ -14,6 +14,8 @@ const ProjectPageContent = (props) => {
   return (props.loading === true ? <LoadingPane/> :
     <section className="flex-container center column">
       <SkillsSection {...props}/>
+      <br/>
+      <br/>
       <Element name='projectPane'>
         <div className="flex-container center">
           <a href={Resume} target="_blank" className="button-primary">open resume</a>
