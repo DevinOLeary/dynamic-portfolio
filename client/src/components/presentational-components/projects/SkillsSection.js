@@ -25,7 +25,7 @@ class SkillsSection extends React.Component{
           </ul>
           <br/>
           <div className="flex-container center">
-            <a href={Resume} target="_blank" className="button-primary"><h3>open resume</h3></a>
+            <a href={Resume} target="_blank" className="button-primary">open resume</a>
           </div>
         </article>
     );
