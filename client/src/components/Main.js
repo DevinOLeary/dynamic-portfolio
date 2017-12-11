@@ -12,14 +12,21 @@ import DevAndDesign from './DevAndDesign';
 import AboutMe from './AboutMe';
 import Footer from './Footer';
 import Header from './Header';
+import backgroundImage from '../images/portfolio-background.jpg';
 
 
 const Main = ({location}) => {
+  const backgroundStyle = {
+    backgroundImage: 'backgroundImage',
+    backgroundRepeat: 'repeat',
+    backgroundSize: 'cover',
+    zIndex: 0
+  }
   const currentKey = location.pathname.split('/')[1] || '/'
   return (
     <div>
       {location.pathname !== "/" && <Header location={location}/>}
-      <div className="body-container">
+      <div className="body-container" style={backgroundStyle}>
         <TransitionGroup>
           <CSSTransition key={currentKey} classNames="fade" timeout={1500}>
             <Switch location={location}>
