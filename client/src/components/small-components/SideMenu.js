@@ -6,7 +6,7 @@ const SideMenu = (props) => {
   const menuList = props.menu.reverse().map(item => {
     return(
       <Link to={item} key={item} smooth={true} className="button-action">
-          <li><h4>{item}</h4></li>
+          <li><h4 className="text-inverse">{item}</h4></li>
       </Link>
     );
   });

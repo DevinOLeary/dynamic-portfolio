@@ -13,7 +13,7 @@ class SingleProjectContent extends React.Component {
     return (
       <div className="flex-container center column" id="boxItem">
         <section className="project-display-box flex-container center column">
-          <button onClick={this.props.closeProject.bind(this)} className="button-action text-inverse button-long"><h4>close</h4></button>
+          <button onClick={this.props.closeProject.bind(this)} className="button-action button-long"><h4 className="text-inverse">close</h4></button>
           {this.props.children}
         </section>
       </div>
