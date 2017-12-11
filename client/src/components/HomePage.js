@@ -29,13 +29,12 @@ class HomePage extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      loading: true,
-      img: {opacity: 1}
+      loading: true
     }
   }
 
   loaded(){
-    this.setState({loading: false, img: {opacity: 0}});
+    this.setState({loading: false});
     this.addAnimation(nameFadeIn);
     this.addAnimation(quoteFadeIn);
     this.addAnimation(firstBoxDrawAnimation);
@@ -44,10 +43,13 @@ class HomePage extends React.Component {
 
   render() {
     let isLoading = this.state.loading;
+    const hidden = {
+      opacity: 0
+    }
     if(isLoading){return (
       <div>
         <LoadingPane/>
-        
+        <img src={bannerImage} alt="homepage" className="img-full_banner" style={hidden} onLoad={this.loaded.bind(this)}/>
       </div>
     )
       }else{
