@@ -56,13 +56,12 @@ const AboutContent = (props) => {
               <article className="flex-container column center display-box">
                 <div className="inner-box flex-container center column">
                   <h3>biking:</h3>
-                  <p className="content-body_read">Mountain, road, gravel, town, unicycle. Being able to ride my bikes in cool places and with cool people ties into pretty much all the things that I see as important in this world, namely nature preservation, community, and health, and tech is the powerful tool that can bring it all together.</p>
+                  <p className="content-body_read">Mountain, road, gravel, town, unicycle. Being able to ride my bikes in cool places and with interesting people ties into pretty much all the things that I see as important in this world, namely nature preservation, community, and health, and tech is the powerful tool that can bring it all together.</p>
                   <br/>
-                  <h3>coffee shops:</h3>
-                  <p className="content-body_read">Coffee is ok, but hanging out in cool coffee shops
-                  with good vibes is one of the top reasons I migrated to computer work.</p>
+                  <h3>the environment:</h3>
+                  <p className="content-body_read">I get pretty heated when I think about the ways we are destroying the environment, but then I get really excited and inspired when I can talk about all the amazing people out their devoting their skills and resources to save the planet and everything on it. Wherever I am in life, I hope that my skills and resources can be used with the same intention.</p>
                   <h3>community:</h3>
-                  <p className="content-body_read">I get super stoked about people doing cool things to bring
+                  <p className="content-body_read">I get energized by people doing innovative things to bring
                   everyone together in their community. My life mission is to
                   maximize my role in creating community, and using the web to extend the range infinitely.</p>
                 </div>
