@@ -18,7 +18,7 @@ class SkillsSection extends React.Component{
     return (
         <article className="flex-container center column full-width ">
           <div className="flex-container center">
-            <p className="content-body_read">Technology is changing every day, and it really requires a passion that's borderline obsession to stay up to date on the most effective ways to build modern websites and applications. There's no telling what I'll be using next month, but here are a few of the tools I'm currently working with:</p>
+            <p className="content-body_read">Technology is changing every day, and it really requires a passion that&#39;s borderline obsession to stay up to date on the most effective ways to build modern websites and applications. Here are a couple things I&#39;m currently obsessed with:</p>
           </div>
           <ul className="flex-container row center" ref={ref => this.skills = ref}>
             {list}
