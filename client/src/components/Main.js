@@ -1,7 +1,7 @@
 import React from 'react';
 import {Route, Switch, withRouter} from 'react-router-dom';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import DocumentMeta from 'react-document-meta';
+import {Helmet} from 'react-helmet';
 
 
 
@@ -16,10 +16,6 @@ import backgroundImage from '../images/portfolio-background.jpg';
 
 
 const Main = ({location}) => {
-  const meta = {
-    title: 'Devin O\'Leary Web Development and Design',
-    description: '\'m Devin O\'Leary, a Web Developer and Designer, Photographer, Cyclist, Surfer, Adventurer, and really just someone trying to live an authentic and impactful life. Send me a message so we can talk about creating something great!'
-  };
   const backgroundStyle = {
     backgroundImage: `url(${backgroundImage})`,
     backgroundRepeat: 'repeat',
@@ -28,7 +24,10 @@ const Main = ({location}) => {
   const currentKey = location.pathname.split('/')[1] || '/'
   return (
     <div>
-      <DocumentMeta {...meta}>
+      <Helmet>
+        <title>'Devin O\'Leary Web Development and Design'</title>
+        <meta name="description" content="I\'m Devin O\'Leary, a Web Developer and Designer, Photographer, Cyclist, Surfer, Adventurer, and really just someone trying to live an authentic and impactful life. Send me a message so we can talk about creating something great!"/>
+      </Helmet>
       {location.pathname !== "/" && <Header location={location}/>}
       <div style={backgroundStyle}>
         <TransitionGroup>
@@ -43,7 +42,6 @@ const Main = ({location}) => {
         </TransitionGroup>
       </div>
       {location.pathname !== "/" && <Footer location={location}/>}
-      </DocumentMeta>
     </div>
   );
 };
