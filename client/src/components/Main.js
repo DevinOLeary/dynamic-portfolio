@@ -17,8 +17,8 @@ import backgroundImage from '../images/portfolio-background.jpg';
 
 const Main = ({location}) => {
   const meta = {
-    title: 'Devin O&#8217;Leary Web Development and Design',
-    description: 'I&#8217;m Devin O&#8217;Leary, a Web Developer and Designer, Photographer, Cyclist, Surfer, Adventurer, and really just someone trying to live an authentic and impactful life. Send me a message so we can talk about creating something great!'
+    title: 'Devin O\'Leary Web Development and Design',
+    description: '\'m Devin O\'Leary, a Web Developer and Designer, Photographer, Cyclist, Surfer, Adventurer, and really just someone trying to live an authentic and impactful life. Send me a message so we can talk about creating something great!'
   };
   const backgroundStyle = {
     backgroundImage: `url(${backgroundImage})`,
@@ -28,7 +28,7 @@ const Main = ({location}) => {
   const currentKey = location.pathname.split('/')[1] || '/'
   return (
     <div>
-      <DocumentMeta {...meta}/>
+      <DocumentMeta {...meta}>
       {location.pathname !== "/" && <Header location={location}/>}
       <div style={backgroundStyle}>
         <TransitionGroup>
@@ -43,6 +43,7 @@ const Main = ({location}) => {
         </TransitionGroup>
       </div>
       {location.pathname !== "/" && <Footer location={location}/>}
+      </DocumentMeta>
     </div>
   );
 };
