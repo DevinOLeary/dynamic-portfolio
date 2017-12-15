@@ -25,7 +25,7 @@ const Main = ({location}) => {
   return (
     <div>
       <Helmet>
-        <title>'Devin O\'Leary Web Development and Design'</title>
+        <title>Devin O&#8217;Leary Web Development and Design</title>
         <meta name="description" content="I\'m Devin O\'Leary, a Web Developer and Designer, Photographer, Cyclist, Surfer, Adventurer, and really just someone trying to live an authentic and impactful life. Send me a message so we can talk about creating something great!"/>
       </Helmet>
       {location.pathname !== "/" && <Header location={location}/>}
