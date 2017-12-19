@@ -16,7 +16,7 @@ const Footer = () => {
       <a href="mailto:djoleary07@gmail.com" style={clearBackground}><img src={mail} alt="djoleary07@gmail.com" className='img-social'/></a>
       <br/>
       <ul className="flex-container row center">
-        <li><a href="https://github.com/djoleary007" target="_blank" rel="noopener noreferrer" style={clearBackground}><img src={github} alt='github' className='img-social' /></a></li>
+        <li><a href="https://github.com/DevinOLeary" target="_blank" rel="noopener noreferrer" style={clearBackground}><img src={github} alt='github' className='img-social' /></a></li>
         <br/>
         <li><a href="https://www.instagram.com/devin_oleary/" target="_blank" rel="noopener noreferrer" style={clearBackground}><img src={instagram} alt='instagram' className='img-social'/></a></li>
       </ul>
