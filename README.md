@@ -7,6 +7,7 @@ Currently it is comfortably built using `create-react-app`, `react-router 4`, `m
 `babel`, `npm`, `GSAP`, `Node.js`, `Express`, `MongoDB`, `AWS-S3`, and my `Sony a6000` camera.
 
 Feel free to shoot me an email at djoleary07@gmail.com with any questions!
+The site is live at http://www.devoleary.com
 
 Cheers,
 Devin
