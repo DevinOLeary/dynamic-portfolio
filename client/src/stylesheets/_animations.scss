@@ -15,31 +15,6 @@
   opacity: 0;
   transition: 800ms;
 }
-.open-enter {
-  opacity: 0;
-  overflow: hidden;
-  max-height: 0px;
-}
-
-.open-enter-active {
-  overflow: hidden;
-  max-height: 1000px;
-  opacity: 1;
-  transition-delay: 200ms;
-  transition:1300ms;
-}
-
-.open-exit {
-  opacity: 1;
-  max-height: 1000px;
-}
-.open-exit-active {
-  opacity: 0;
-  transition-delay: 200ms;
-  transition: 1300ms;
-  max-height:0px;
-  overflow: hidden;
-}
 
 
 
