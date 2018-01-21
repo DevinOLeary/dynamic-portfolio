@@ -110,7 +110,7 @@ router.delete('/:id', (req, res) => {
   if(!ObjectID.isValid(id)){
     return res.status(404).send();
   }
-  Project.fineOneAndRemove({
+  Project.findOneAndRemove({
     _id: id
   }).then((item) => {
     if(!item){
