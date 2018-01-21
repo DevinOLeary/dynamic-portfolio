@@ -183,7 +183,7 @@
   bottom: 0;
   right: 0;
   left: 0;
-  opacity:0;
+  opacity:1;
   transition: opacity .5s;
   background-color: $background-secondary-trans;
   display: flex;
@@ -192,7 +192,7 @@
   border-radius: 100%;
 }
 .project_list_img-overlay:hover{
-  opacity:1;
+  opacity:0;
 }
 
 .title-box{
