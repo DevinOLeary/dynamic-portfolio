@@ -105,4 +105,22 @@ router.get('/:id', (req, res) => {
 });
 
 
+router.delete('/:id', (req, res) => {
+  const id = req.params.id;
+  if(!ObjectID.isValid(id)){
+    return res.status(404).send();
+  }
+  Project.fineOneAndRemove({
+    _id: id
+  }).then((item) => {
+    if(!item){
+      res.status(404).send();
+    }
+    res.send({item});
+  }).catch((err) => {
+    res.status(404).send();
+  });
+});
+
+
 module.exports = router;
