@@ -1,5 +1,6 @@
 //colors
-$blue: #362D41;
+$blue: rgba(55,44,65,1);
+$blue-trans: rgba(55,44,65,.8);
 $white: rgb(255,255,255);
 $white-trans: rgba(255,255,255,.5);
 $transparent: rgba(0,0,0,0);
@@ -15,7 +16,7 @@ $rorange: #BE3144;
 
 //backgrounds
 $background-primary: $orange;
-$background-primary-trans: $orange-trans;
+$background-primary-trans: $blue-trans;
 $background-secondary: $red;
 $background-secondary-trans: $red-trans;
 $background-white: $white;
